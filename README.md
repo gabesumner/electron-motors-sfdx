@@ -6,10 +6,10 @@ This is an end-to-end Lightning Platform demo based on a fictitious company call
 
 1. Clone the repository:
 
-  ```
-  git clone https://github.com/gabesumner/electron-motors-sfdx
-   cd electron-motors-sfdx
-  ```
+```
+git clone https://github.com/gabesumner/electron-motors-sfdx
+cd electron-motors-sfdx
+```
 
 2. Create a scratch org and provide it with an alias (ebikes):
 
