@@ -11,7 +11,7 @@ git clone https://github.com/gabesumner/electron-motors-sfdx
 cd electron-motors-sfdx
 ```
 
-2. Create a scratch org and provide it with an alias (ebikes):
+2. Create a scratch org and provide it with an alias:
 
   ```
   sfdx force:org:create -s -f config/project-scratch-def.json -a electron
