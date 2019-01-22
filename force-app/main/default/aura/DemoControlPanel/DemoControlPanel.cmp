@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="DemoController" access="global" >
+    <div class="slds-p-around_medium">
+        <lightning:card title="RESET" iconName="utility:warning">
+            <div class="slds-p-horizontal_medium">
+                <div><lightning:button label="Delete All Accounts and Activity" iconName="utility:warning" onclick="{!c.resetAccounts}" /></div>
+            </div>
+        </lightning:card>
+        
+        <lightning:card title="GENERATE" iconName="utility:adduser">
+            <div class="slds-p-horizontal_medium">
+                <div>
+                    <lightning:button label="Generate 1 Account with Activity" iconName="utility:adduser" onclick="{!c.createAccount}" />
+                    <lightning:button label="Generate 10 Accounts with Activity" iconName="utility:adduser" onclick="{!c.createAccounts}" />
+                    <lightning:button label="Generate 50 Accounts with Activity" iconName="utility:adduser" onclick="{!c.createAccounts50}" />
+                </div>
+            </div>
+        </lightning:card>
+    </div>
+</aura:component>

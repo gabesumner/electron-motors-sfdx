@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Vehicle_Final</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Vehicle__c</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#38C393</headerColor>
+        <logo>manufacturing</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Manage the production process of customers&#39; vehicles</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Manufacturing</label>
+    <navType>Standard</navType>
+    <tabs>Manufacturing_Home</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-Feed</tabs>
+    <tabs>Vehicle__c</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>Inspection__c</tabs>
+    <tabs>Parts__x</tabs>
+    <tabs>VehicleParts__x</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Manufacturing_UtilityBar</utilityBar>
+</CustomApplication>

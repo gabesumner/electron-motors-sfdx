@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Electron</fullName>
+    <fields>Name</fields>
+    <fields>Owner__c</fields>
+    <fields>Model__c</fields>
+    <fields>Year__c</fields>
+    <label>Electron</label>
+</CompactLayout>

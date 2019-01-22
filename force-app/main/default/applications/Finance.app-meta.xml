@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Loan_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Loan__c</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#ACD360</headerColor>
+        <logo>finance1</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Manage invoicing and financing of customers&#39; vehicles.</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Finance</label>
+    <navType>Standard</navType>
+    <tabs>Finance_Home</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>Vehicle__c</tabs>
+    <tabs>Loan__c</tabs>
+    <tabs>standard-ProcessInstanceWorkitem</tabs>
+    <tabs>standard-Feed</tabs>
+    <tabs>Invoice__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Finance_UtilityBar</utilityBar>
+</CustomApplication>

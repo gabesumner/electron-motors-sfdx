@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#FA975C</headerColor>
+        <logo>training</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Manage customer education about their new vehicle.</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Training</label>
+    <navType>Standard</navType>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>Vehicle__c</tabs>
+    <tabs>standard-Task</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Training_UtilityBar</utilityBar>
+</CustomApplication>

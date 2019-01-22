@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Vehicle_Final</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Vehicle__c</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#E1BE5C</headerColor>
+        <logo>shipping</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Manage the transportation and delivery of customers&#39; vehicles.</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Delivery</label>
+    <navType>Standard</navType>
+    <tabs>standard-Feed</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>Loan__c</tabs>
+    <tabs>standard-Task</tabs>
+    <tabs>Vehicle__c</tabs>
+    <tabs>Inspection__c</tabs>
+    <tabs>Delivery__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Electra_Motors_UtilityBar</utilityBar>
+</CustomApplication>

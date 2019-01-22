@@ -1,0 +1,34 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:availableForFlowScreens" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute name="record" type="Object" description="The record object to be displayed"/>
+    <aura:attribute name="simpleRecord" type="Object" description="A simplified view record object to be displayed"/>
+    <aura:attribute name="recordError" type="String" description="An error message bound to force:recordData"/>
+    
+    <aura:attribute name="Price" type="String" default="0" />
+    <aura:attribute name="Downpayment" type="String" />
+    <aura:attribute name="Rate" type="String" />
+    <aura:attribute name="Terms" type="String" />
+    <aura:attribute name="MonthlyPayment" type="String" />
+    <aura:attribute name="TotalPayment" type="String" />
+    <aura:attribute name="TotalInterest" type="String" />
+    
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning:card title="Loan">
+                <lightning:input type="number" label="Price" aura:id="inputPrice" class="slds-p-bottom_small" formatter="currency" step="0" value="{!v.Price}" onchange="{!c.inputUpdated}" />
+                <lightning:input type="number" label="Downpayment" aura:id="inputDownpayment" class="slds-p-bottom_small" formatter="currency" step="0" value="{!v.Downpayment}" onchange="{!c.inputUpdated}" />
+                <lightning:input type="number" label="Rate (APR)" aura:id="inputRate" class="slds-p-bottom_small" step="0.01" value="{!v.Rate}" onchange="{!c.inputUpdated}" />
+                <lightning:input type="number" label="Terms (months)" aura:id="inputTerms" class="slds-p-bottom_small" value="{!v.Terms}" onchange="{!c.inputUpdated}" />
+            </lightning:card>
+        </div>
+        <div class="slds-col">
+            <lightning:card title="Estimate">
+                <lightning:input type="number" label="Monthly Payment" disabled="true" class="slds-p-bottom_small" formatter="currency" step="0.01" value="{!v.MonthlyPayment}" />
+                <lightning:input type="number" label="Number of Payments" aura:id="numPayments" name="numPayments" disabled="true" class="slds-p-bottom_small" value="{!v.Terms}" />
+                <lightning:input type="number" label="Total Payments" aura:id="totalPayments" name="totalPayments" disabled="true" class="slds-p-bottom_small" formatter="currency" step="0.01" value="{!v.TotalPayment}" />
+                <lightning:input type="number" label="Total Interest" aura:id="totalInterest" name="totalInterest" disabled="true" class="slds-p-bottom_small" formatter="currency" step="0.01" value="{!v.TotalInterest}" />
+            </lightning:card>
+        </div>
+    </div>    
+</aura:component>

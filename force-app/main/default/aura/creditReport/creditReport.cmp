@@ -1,0 +1,104 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="status" type="String" />
+    <aura:attribute name="terms" type="String" />
+    <aura:attribute name="applicationId" type="String" />
+    <aura:attribute name="earlyPaymentDiscount" type="String" />
+    <aura:attribute name="creditRequested" type="String" />
+    <aura:attribute name="creditLimit" type="String" />
+    <aura:attribute name="createdDate" type="String" />
+    <aura:attribute name="modifiedDate" type="String" />
+    
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="simpleRecord" type="Object" />
+    <aura:attribute name="error" type="String" />
+    
+    <force:recordData aura:id="forceRecordCmp"
+                      recordId="{!v.recordId}"
+                      layoutType="FULL"
+                      mode="VIEW"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      targetError="{!v.error}" />
+    
+    <lightning:card title="Credit Check" iconName="standard:account">
+        <aura:set attribute="actions">
+            <lightning:button label="Check Credit" onclick="{!c.checkCredit}" />
+        </aura:set>
+        
+        <div aura:id="spinner" id="spinner" class="demo-only">
+            <div role="status" class="slds-spinner slds-spinner_medium">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+        <div aura:id="creditDetails" id="creditDetails">
+            <div class="slds-grid full forcePageBlockSectionRow slds-p-left_small slds-p-right_small">
+                <div class="slds-has-flexi-truncate slds-p-horizontal_x-small full forcePageBlockItem forcePageBlockItemView" role="listitem">
+                    <div class="slds-form-element slds-m-bottom_xx-small slds-form-element_edit slds-grow slds-hint-parent override--slds-form-element">
+                        <span class="slds-form-element__label">Application ID</span>
+                        <div class="slds-form-element__control slds-grid itemBody">
+                            <span class="slds-form-element__static slds-grow slds-form-element_separator is-read-only">
+                                <span class="uiOutputText">{!v.applicationId}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-has-flexi-truncate slds-p-horizontal_x-small full forcePageBlockItem forcePageBlockItemView" role="listitem">
+                    <div class="slds-form-element slds-m-bottom_xx-small slds-form-element_edit slds-grow slds-hint-parent override--slds-form-element">
+                        <span class="slds-form-element__label">Payment Terms</span>
+                        <div class="slds-form-element__control slds-grid itemBody">
+                            <span class="slds-form-element__static slds-grow slds-form-element_separator is-read-only">
+                                <span class="uiOutputText">{!v.terms}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+            <div class="slds-grid full forcePageBlockSectionRow slds-p-left_small slds-p-right_small">
+                <div class="slds-has-flexi-truncate slds-p-horizontal_x-small full forcePageBlockItem forcePageBlockItemView" role="listitem">
+                    <div class="slds-form-element slds-m-bottom_xx-small slds-form-element_edit slds-grow slds-hint-parent override--slds-form-element">
+                        <span class="slds-form-element__label">Credit Requested Amount</span>
+                        <div class="slds-form-element__control slds-grid itemBody">
+                            <span class="slds-form-element__static slds-grow slds-form-element_separator is-read-only">
+                                <span class="uiOutputText">{!v.creditRequested}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-has-flexi-truncate slds-p-horizontal_x-small full forcePageBlockItem forcePageBlockItemView" role="listitem">
+                    <div class="slds-form-element slds-m-bottom_xx-small slds-form-element_edit slds-grow slds-hint-parent override--slds-form-element">
+                        <span class="slds-form-element__label">Recommended Credit Limit</span>
+                        <div class="slds-form-element__control slds-grid itemBody">
+                            <span class="slds-form-element__static slds-grow slds-form-element_separator is-read-only">
+                                <span class="creditLimit uiOutputText">{!v.creditLimit}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-grid full forcePageBlockSectionRow slds-p-left_small slds-p-right_small">
+                <div class="slds-has-flexi-truncate slds-p-horizontal_x-small full forcePageBlockItem forcePageBlockItemView" role="listitem">
+                    <div class="slds-form-element slds-m-bottom_xx-small slds-form-element_edit slds-grow slds-hint-parent override--slds-form-element">
+                        <span class="slds-form-element__label">Application Created Date</span>
+                        <div class="slds-form-element__control slds-grid itemBody">
+                            <span class="slds-form-element__static slds-grow slds-form-element_separator is-read-only">
+                                <span class="uiOutputText">{!v.createdDate}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-has-flexi-truncate slds-p-horizontal_x-small full forcePageBlockItem forcePageBlockItemView" role="listitem">
+                    <div class="slds-form-element slds-m-bottom_xx-small slds-form-element_edit slds-grow slds-hint-parent override--slds-form-element">
+                        <span class="slds-form-element__label">Application Modified Date</span>
+                        <div class="slds-form-element__control slds-grid itemBody">
+                            <span class="slds-form-element__static slds-grow slds-form-element_separator is-read-only">
+                                <span class="uiOutputText">{!v.modifiedDate}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>        
+    </lightning:card>
+</aura:component>

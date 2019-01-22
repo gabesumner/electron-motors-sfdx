@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partnumber__c</fullName>
+    <description>Partnumber</description>
+    <externalDeveloperName>Partnumber</externalDeveloperName>
+    <externalId>false</externalId>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Part Number</label>
+    <length>128</length>
+    <referenceTo>Parts__x</referenceTo>
+    <relationshipLabel>SAP Vehicle Parts</relationshipLabel>
+    <relationshipName>VehicleParts</relationshipName>
+    <type>ExternalLookup</type>
+</CustomField>

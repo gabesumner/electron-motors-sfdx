@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wheels__c</fullName>
+    <externalId>false</externalId>
+    <label>Wheels</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>19&quot; Silver Wheels</fullName>
+                <default>true</default>
+                <label>19&quot; Silver Wheels</label>
+            </value>
+            <value>
+                <fullName>19&quot; Sonic Carbon Wheels</fullName>
+                <default>false</default>
+                <label>19&quot; Sonic Carbon Wheels</label>
+            </value>
+            <value>
+                <fullName>19&quot; Onyx Black Spinners</fullName>
+                <default>false</default>
+                <label>19&quot; Onyx Black Spinners</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

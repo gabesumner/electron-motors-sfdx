@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default</fullName>
+    <fields>Partnumber__c</fields>
+    <fields>Description__c</fields>
+    <fields>Category__c</fields>
+    <fields>Supplier__c</fields>
+    <label>Default</label>
+</CompactLayout>

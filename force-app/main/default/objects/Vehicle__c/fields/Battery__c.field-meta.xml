@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Battery__c</fullName>
+    <externalId>false</externalId>
+    <label>Battery</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>75 kWh</fullName>
+                <default>true</default>
+                <label>75 kWh</label>
+            </value>
+            <value>
+                <fullName>100 kWh</fullName>
+                <default>false</default>
+                <label>100 kWh</label>
+            </value>
+            <value>
+                <fullName>100P kWh</fullName>
+                <default>false</default>
+                <label>100P kWh</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,53 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <ltng:require scripts="{!$Resource.siema}" afterScriptsLoaded="{!c.scriptsLoaded}" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="photoUrl" type="String" />
+    <aura:attribute name="record" type="Object" description="The record object to be displayed"/>
+    <aura:attribute name="simpleRecord" type="Object" description="A simplified view record object to be displayed"/>
+    <aura:attribute name="recordError" type="String" description="An error message bound to force:recordData"/>
+    <aura:attribute name="color" type="String" access="global" />
+    <aura:attribute name="scriptsLoaded" type="Boolean" default="false" />
+    <aura:attribute name="recordLoaded" type="Boolean" default="false" />
+    
+    <force:recordData aura:id="recordEdit"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      recordUpdated="{!c.recordLoaded}"
+                      mode="EDIT" />
+    
+    <div>
+        <lightning:card title="Personalize" iconName="standard:photo">
+            <div aura:id="photoWrapper" id="photoWrapper" class="hide">
+                <div id="siema" aura:id="siema">
+                    <div><img src="{!$Resource.flint}" style="{! 'filter:hue-rotate(' + v.color + 'deg)'}" /></div>
+                    <div><img src="{!$Resource.flare}" style="{! 'filter:hue-rotate(' + v.color + 'deg)'}" /></div>
+                    <div><img src="{!$Resource.flash}" style="{! 'filter:hue-rotate(' + v.color + 'deg)'}" /></div>
+                </div>
+                <div class="colors slds-grid">
+                    <div class="slds-col slds-size_1-of-6">
+                        <div data-value="0" class="{!v.color == '0' ? 'color red selected' : 'color red'}" onclick="{!c.colorClick}"></div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <div data-value="230" class="{!v.color == '230' ? 'color blue selected' : 'color blue'}" onclick="{!c.colorClick}"></div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <div data-value="130" class="{!v.color == '130' ? 'color green selected' : 'color green'}" onclick="{!c.colorClick}"></div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <div data-value="1000" class="{!v.color == '1000' ? 'color purple selected' : 'color purple'}" onclick="{!c.colorClick}"></div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <div data-value="4150" class="{!v.color == '4150' ? 'color teal selected' : 'color teal'}" onclick="{!c.colorClick}"></div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <div data-value="55" class="{!v.color == '55' ? 'color brown selected' : 'color brown'}" onclick="{!c.colorClick}"></div>
+                    </div>
+                </div>                   
+            </div>
+        </lightning:card>
+    </div>  
+</aura:component>

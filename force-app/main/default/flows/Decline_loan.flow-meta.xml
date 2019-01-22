@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>Decline loan {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Decline loan</label>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>getloan</name>
+        <label>Get loan</label>
+        <locationX>326</locationX>
+        <locationY>128</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Deny_loan</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <object>Loan__c</object>
+        <outputReference>loan</outputReference>
+        <queriedFields>Status__c</queriedFields>
+        <queriedFields>FirstName__c</queriedFields>
+        <queriedFields>LastName__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Deny_loan</name>
+        <label>Deny loan</label>
+        <locationX>326</locationX>
+        <locationY>232</locationY>
+        <connector>
+            <targetReference>Show_confirmation</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Declined</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Loan__c</object>
+    </recordUpdates>
+    <screens>
+        <name>Show_confirmation</name>
+        <label>Show confirmation</label>
+        <locationX>325</locationX>
+        <locationY>342</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>displayText</name>
+            <fieldText>{!loan.FirstName__c} {!loan.LastName__c}&#39;s loan has now been declined.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>getloan</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>loan</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Loan__c</objectType>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

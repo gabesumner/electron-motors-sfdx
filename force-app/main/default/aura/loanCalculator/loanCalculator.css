@@ -1,0 +1,9 @@
+.THIS .slds-card {
+    border: 1px solid rgb(221, 219, 218) !important;
+    padding: 0 .75rem !important;
+}
+
+.THIS .slds-input[disabled] {
+    border: 0 !important;
+    background-color: inherit !important;
+}

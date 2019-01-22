@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#F77E75</headerColor>
+        <logo>hr1</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Finding and hiring trailblazers to delight our customers.</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Human Resources</label>
+    <navType>Standard</navType>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-OtherUserProfile</tabs>
+    <tabs>standard-Feed</tabs>
+    <tabs>standard-Task</tabs>
+    <tabs>standard-File</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Human_Resources_UtilityBar</utilityBar>
+</CustomApplication>
