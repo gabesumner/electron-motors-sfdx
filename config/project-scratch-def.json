@@ -1,7 +1,9 @@
 {
-    "orgName": "gsumner Company",
+    "orgName": "Electron Motors",
     "sourceOrg": "00Df4000003AHjVEAW",
-    "orgPreferences" : {
-        "enabled": ["S1DesktopEnabled"]
+    "orgPreferences": {
+        "enabled": [
+            "S1DesktopEnabled"
+        ]
     }
 }
