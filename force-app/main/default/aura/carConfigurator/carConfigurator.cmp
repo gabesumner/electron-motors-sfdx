@@ -1,0 +1,66 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="photoUrl" type="String" />
+    <aura:attribute name="record" type="Object" description="The record object to be displayed" />
+    <aura:attribute name="simpleRecord" type="Object" description="A simplified view record object to be displayed" />
+    <aura:attribute name="recordError" type="String" description="An error message bound to force:recordData" />
+    <aura:attribute name="color" type="String" access="global" />
+    <aura:attribute name="model" type="String" access="global" />
+    <aura:attribute name="battery" type="String" access="global" />
+
+    <force:recordData aura:id="recordEdit" layoutType="FULL" recordId="{!v.recordId}" targetError="{!v.recordError}" targetRecord="{!v.record}" targetFields="{!v.simpleRecord}" recordUpdated="{!c.recordLoaded}" mode="EDIT" />
+
+    <div>
+        <lightning:card title="Car Configurator" iconName="standard:photo">
+            <div aura:id="photoWrapper" id="photoWrapper">
+                <div class="slds-grid slds-p-left_medium slds-p-right_medium slds-p-bottom_xx-small">
+                    <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+                        <button data-value="Flint" class="{!v.model == 'Flint' ? 'slds-button slds-button_brand' : 'slds-button slds-button_neutral'}" onclick="{!c.modelClick}">Flint</button>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+                        <button data-value="Flare" class="{!v.model == 'Flare' ? 'slds-button slds-button_brand' : 'slds-button slds-button_neutral'}" onclick="{!c.modelClick}">Flare</button>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+                        <button data-value="Flash" class="{!v.model == 'Flash' ? 'slds-button slds-button_brand' : 'slds-button slds-button_neutral'}" onclick="{!c.modelClick}">Flash</button>
+                    </div>
+                </div>
+                <div>
+                    <img src="{!v.photoUrl}" style="{! 'filter:hue-rotate(' + v.color + 'deg)'}" />
+                </div>
+                <div class="colors slds-grid">
+                    <div class="slds-col slds-size_1-of-6">
+                        <div data-value="0" class="{!v.color == '0' ? 'color red selected' : 'color red'}" onclick="{!c.colorClick}"></div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <div data-value="230" class="{!v.color == '230' ? 'color blue selected' : 'color blue'}" onclick="{!c.colorClick}"></div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <div data-value="130" class="{!v.color == '130' ? 'color green selected' : 'color green'}" onclick="{!c.colorClick}"></div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <div data-value="1000" class="{!v.color == '1000' ? 'color purple selected' : 'color purple'}" onclick="{!c.colorClick}"></div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <div data-value="4150" class="{!v.color == '4150' ? 'color teal selected' : 'color teal'}" onclick="{!c.colorClick}"></div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <div data-value="55" class="{!v.color == '55' ? 'color brown selected' : 'color brown'}" onclick="{!c.colorClick}"></div>
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-p-left_medium slds-p-right_medium">
+                    <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+                        <button data-value="75 kWh" class="{!v.battery == '75 kWh' ? 'slds-button slds-button_brand' : 'slds-button slds-button_neutral'}" onclick="{!c.batteryClick}">75 kWh</button>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+                        <button data-value="100 kWh" class="{!v.battery == '100 kWh' ? 'slds-button slds-button_brand' : 'slds-button slds-button_neutral'}" onclick="{!c.batteryClick}">100 kWh</button>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+                        <button data-value="100P kWh" class="{!v.battery == '100P kWh' ? 'slds-button slds-button_brand' : 'slds-button slds-button_neutral'}" onclick="{!c.batteryClick}">100P kWh</button>
+                    </div>
+                </div>
+
+            </div>
+        </lightning:card>
+    </div>
+</aura:component>
