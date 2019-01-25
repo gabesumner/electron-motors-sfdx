@@ -1,4 +1,4 @@
-<design:component label="Vehicle Photo">
+<design:component label="Car Configurator">
     <design:supportedFormFactors>
         <design:supportedFormFactor type="Large" />
         <design:supportedFormFactor type="Small" />
