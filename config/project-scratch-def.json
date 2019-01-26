@@ -1,9 +1,18 @@
 {
     "orgName": "Electron Motors",
     "sourceOrg": "00Df4000003AHjVEAW",
-    "orgPreferences": {
-        "enabled": [
-            "S1DesktopEnabled"
-        ]
+    "features": [
+        "Communities",
+        "EinsteinAssistant",
+        "SiteDotCom",
+        "Sites"
+    ],
+    "settings": {
+        "orgPreferenceSettings": {
+            "networksEnabled": true,
+            "pathAssistantsEnabled": true,
+            "s1DesktopEnabled": true,
+            "s1EncryptedStoragePref2": false
+        }
     }
 }

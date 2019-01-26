@@ -122,10 +122,6 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>SAP_Order__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Delivery_Date__c</field>
             </layoutItems>
         </layoutColumns>
@@ -259,10 +255,6 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>Invoice__c.Vehicle__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>SAP_Order__c.Vehicle__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>Serialnumber__c</fields>
