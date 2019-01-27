@@ -18,7 +18,7 @@
         <processMetadataValues>
             <name>textJson</name>
             <value>
-                <stringValue>{&quot;mentions&quot;:[{&quot;name&quot;:&quot;Finance Team&quot;,&quot;id&quot;:&quot;0F9f4000000AfXsCAK&quot;}],&quot;message&quot;:&quot;@[0F9f4000000AfXsCAK] - This vehicle is now awaiting loan approval.&quot;}</stringValue>
+                <stringValue>{&quot;mentions&quot;:[],&quot;message&quot;:&quot;This vehicle is now awaiting loan approval.&quot;}</stringValue>
             </value>
         </processMetadataValues>
         <name>myRule_3_A1</name>
@@ -30,7 +30,7 @@
         <inputParameters>
             <name>text</name>
             <value>
-                <stringValue>@[0F9f4000000AfXsCAK] - This vehicle is now awaiting loan approval.</stringValue>
+                <stringValue>This vehicle is now awaiting loan approval.</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -47,7 +47,7 @@
         <processMetadataValues>
             <name>textJson</name>
             <value>
-                <stringValue>{&quot;mentions&quot;:[{&quot;name&quot;:&quot;Manufacturing Team&quot;,&quot;id&quot;:&quot;0F9f4000000AfYWCA0&quot;}],&quot;message&quot;:&quot;@[0F9f4000000AfYWCA0] This vehicle is now ready for manufacturing. \n\nSAP Order: V-00001&quot;}</stringValue>
+                <stringValue>{&quot;mentions&quot;:[],&quot;message&quot;:&quot;This vehicle is now ready for manufacturing. &quot;}</stringValue>
             </value>
         </processMetadataValues>
         <name>myRule_5_A2</name>
@@ -62,9 +62,7 @@
         <inputParameters>
             <name>text</name>
             <value>
-                <stringValue>@[0F9f4000000AfYWCA0] This vehicle is now ready for manufacturing. 
-
-SAP Order: V-00001</stringValue>
+                <stringValue>This vehicle is now ready for manufacturing. </stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -744,7 +742,7 @@ SAP Order: V-00001</stringValue>
         </rules>
     </decisions>
     <description>Complete vehicle delivery process.</description>
-    <interviewLabel>Vehicle-44_InterviewLabel</interviewLabel>
+    <interviewLabel>Vehicle-2_InterviewLabel</interviewLabel>
     <label>Vehicle Process</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -779,6 +777,9 @@ SAP Order: V-00001</stringValue>
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -789,6 +790,9 @@ SAP Order: V-00001</stringValue>
             <value>
                 <stringValue>[Vehicle__c]</stringValue>
             </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_5_A1</name>
         <label>Add to SAP</label>
@@ -856,6 +860,9 @@ SAP Order: V-00001</stringValue>
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -866,6 +873,9 @@ SAP Order: V-00001</stringValue>
             <value>
                 <stringValue>[Vehicle__c]</stringValue>
             </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_7_A1</name>
         <label>Delivery signoff</label>
@@ -926,7 +936,7 @@ SAP Order: V-00001</stringValue>
         <object>Vehicle__c</object>
     </recordUpdates>
     <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
