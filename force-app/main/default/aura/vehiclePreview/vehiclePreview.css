@@ -1,0 +1,35 @@
+.THIS {
+    width: 100%;
+}
+
+.THIS .photo-wrapper {
+    width: 100%;
+    position: relative;
+    animation-duration: 1s;
+    text-align: center;
+}
+
+.THIS .photo-wrapper img {
+    max-width: 900px;
+    width: 100%;
+    padding-left: 10%;
+	padding-right: 10%;    
+}
+
+@keyframes driveOff {
+    from {
+        left: 0;
+    }
+    to {
+        left: -2500px;
+    }
+}
+
+@keyframes driveIn {
+    from {
+        left: +2500px;
+    }
+    to {
+        left: 0;
+    }
+}

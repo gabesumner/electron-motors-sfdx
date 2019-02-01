@@ -1,0 +1,27 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <footer class="text-center">
+        <ul class="slds-list_horizontal slds-has-dividers_right">
+            <li class="slds-item">
+                <a href="javascript:void(0)">Electron Motors</a>
+            </li>
+            <li class="slds-item">
+                <a href="javascript:void(0)">Privacy &amp; Legal</a>
+            </li>
+            <li class="slds-item">
+                <a href="javascript:void(0)">Contact</a>
+            </li>
+            <li class="slds-item">
+                <a href="javascript:void(0)">Careers</a>
+            </li>
+            <li class="slds-item">
+                <a href="javascript:void(0)">Newsletter</a>
+            </li>
+            <li class="slds-item">
+                <a href="javascript:void(0)">Forums</a>
+            </li>
+            <li class="slds-item">
+                <a href="javascript:void(0)">Locations</a>
+            </li>
+        </ul>
+    </footer>
+</aura:component>

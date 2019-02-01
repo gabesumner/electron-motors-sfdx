@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningExperienceTheme xmlns="http://soap.sforce.com/2006/04/metadata">
     <defaultBrandingSet>LEXTHEMINGElectron</defaultBrandingSet>
+    <description>Electron Motors branded Salesforce theme.</description>
     <masterLabel>Electron Motors Theme</masterLabel>
     <shouldOverrideLoadingImage>false</shouldOverrideLoadingImage>
 </LightningExperienceTheme>

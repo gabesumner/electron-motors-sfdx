@@ -40,5 +40,9 @@
         <propertyName>LINK_AS_BACKGROUND</propertyName>
         <propertyValue>false</propertyValue>
     </brandingSetProperty>
-    <masterLabel>Electron</masterLabel>
+    <brandingSetProperty>
+        <propertyName>OVERRIDE_LOADING_PAGE</propertyName>
+        <propertyValue>false</propertyValue>
+    </brandingSetProperty>
+    <masterLabel>Electron Motors Theme</masterLabel>
 </BrandingSet>

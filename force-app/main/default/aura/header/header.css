@@ -1,0 +1,57 @@
+.THIS {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    padding: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    line-height: 30px;
+    width: 100%;
+    text-align: center;
+    display: inline-flex !important;
+    height: 50px;
+}
+
+.THIS .logo {
+    text-align: left;
+}
+
+.THIS .models {
+    text-align: center;
+}
+
+.THIS .login {
+    text-align: right;
+}
+
+.THIS a {
+    color: white;
+}
+
+.THIS .logo img {
+    height: 30px;    
+}
+
+.THIS .link {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .THIS .logo {
+        text-align: center;
+    }
+    
+    .THIS .models {
+        display: none;
+        text-align: center;
+    }
+    
+    .THIS .login {
+        display: none;
+        text-align: right;
+    }
+}

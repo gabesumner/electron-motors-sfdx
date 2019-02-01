@@ -1,0 +1,20 @@
+.THIS {
+    text-align: center;
+    font-size: 0.9rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    width: 100%;  
+}
+
+.THIS ul {
+    display: inline-flex;
+}
+
+@media only screen and (max-width: 600px) {    
+    .THIS {
+        display: none;
+    }
+}

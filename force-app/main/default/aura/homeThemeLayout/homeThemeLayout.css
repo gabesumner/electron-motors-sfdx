@@ -1,0 +1,79 @@
+.THIS {
+    position:absolute;
+    height: 100%;
+    width: 100%;    
+    background-image: linear-gradient(#999, #fff);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.THIS .siteforceContentArea {
+    height: 100%;    
+}
+
+.THIS .contentRegion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.THIS .contentRegion h1 {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 300;
+    font-family: "Open Sans", sans-serif;    
+}
+
+.THIS .contentRegion p span {
+    font-weight: bold;
+}
+
+.THIS .actions a {
+    font-weight: 300;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    padding: 0.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    background-color: rgb(51, 51, 51);
+    text-transform: uppercase;
+    color: white;
+    margin: 0 0.3rem 0 0.3rem;
+}
+
+.THIS .actions a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.THIS .actions a.primary {
+    background-color: rgb(87, 132, 171);
+}
+
+.THIS .comm-content-footer {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, 0%);    
+}
+
+@media only screen and (max-width: 600px) {
+    .THIS .contentRegion h1 {
+        font-size: 2.5rem;
+    }
+    .THIS .actions a {
+        display: block;
+        margin-left: 3em;
+        margin-right: 3em;
+        margin-bottom: 1em;
+    }
+    .THIS .contentRegion {
+        width: 100%;
+    }    
+}

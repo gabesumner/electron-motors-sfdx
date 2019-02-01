@@ -1,0 +1,26 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" controller="DemoController" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="login" type="String" default="Login" />
+    <aura:registerEvent name="modelSelectedEvent" type="c:modelSelectedEvent" />
+    <nav class="slds-grid">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 logo">
+            <a href=".">
+                <img src="{!$Resource.electron_logo_horizontal}" />
+            </a>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 models">
+            <span class="slds-p-horizontal_x-large">
+                <ui:outputText value="Flint" class="link" click="{!c.clickedModel}" />
+            </span>
+            <span class="slds-p-horizontal_x-large">
+                <ui:outputText value="Flare" class="link" click="{!c.clickedModel}" />
+            </span>
+            <span class="slds-p-horizontal_x-large">
+                <ui:outputText value="Flash" class="link" click="{!c.clickedModel}" />
+            </span>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 login">
+            <span><a href="./login">{!v.login}</a></span>
+        </div>
+    </nav>
+</aura:component>

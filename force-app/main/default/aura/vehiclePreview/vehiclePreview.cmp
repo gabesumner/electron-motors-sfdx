@@ -1,0 +1,21 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" controller="DemoController" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="c:vehicleIdSetEvent" action="{!c.handleVehicleIdSetEvent}" />
+    <aura:handler event="c:modelSelectedEvent" action="{!c.handleModelSelectedEvent}" />
+    <aura:attribute name="selectedModel" type="String" default="Flint" />
+    <aura:attribute name="background" type="String" />
+    <aura:attribute name="photoUrl" type="String" default="{!$Resource.flare}" />
+    <aura:attribute name="photoStyle" type="String" default="" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="vehicle" type="Object" />
+    <aura:attribute name="componentStyle" type="String" />
+    <force:recordData aura:id="recordLoader" recordId="{!v.recordId}" targetRecord="{!v.record}" targetFields="{!v.vehicle}" recordUpdated="{!c.handleRecordUpdated}" fields="Id, Model__c, Paint__c" />
+    <ltng:require scripts="{!$Resource.cookie}" afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+
+    <div style="{!v.componentStyle}">
+        <div class="photo-wrapper" style="{!v.photoStyle}">
+            <img aura:id="photo" src="{!v.photoUrl}" style="{!v.vehicle.Paint__c ? 'filter: hue-rotate(' + v.vehicle.Paint__c + 'deg);' : ''}" />
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,5 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="Electron Home Layout">
+    <div>
+        {!v.body}
+    </div>
+</aura:component>
