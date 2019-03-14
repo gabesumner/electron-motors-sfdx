@@ -44,3 +44,18 @@ cd electron-motors-sfdx
 9. Go to **Setup** then **All Communities** click **Builder** for the **Electron Motors Website** and click **Publish**.
 
 10. Use the **App Launcher**, click **Sales**, then navigate to **Vehicles**.
+
+### Communities Setup
+
+Complete these steps if you want to involve Communities in your demo.
+
+1. Visit **Setup -> Users -> Roles** and create a new **Administrator** role.
+
+2. Visit **Setup -> Users -> Users**, edit your account, then assign your new role to your account.
+
+3. Visit **Setup -> Security -> Login Access Policies** and enable the **Administrators Can Log in as Any User** setting.
+
+4. Visit the Contact who will represent your buyer and click **Enable Customer User**.
+
+5. On the same Contact click **Login to Community as User**.
+
