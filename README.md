@@ -41,7 +41,7 @@ cd electron-motors-sfdx
 
 8. Use the buttons to generate Accounts, Contacts, and Vehicles.
 
-9. Go to **Setup** then **All Communities** click **Builder** for the **Electron Motors Website** and click **Publish**.
+9. Go to **Setup** then **All Communities** click **Builder** for the **Customers** and click **Publish**.
 
 10. Use the **App Launcher**, click **Sales**, then navigate to **Vehicles**.
 

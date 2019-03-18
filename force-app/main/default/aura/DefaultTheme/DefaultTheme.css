@@ -1,0 +1,141 @@
+.THIS {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    font-size: 1rem;
+    text-align: center;
+    z-index: -1;
+}
+
+.THIS .fullPage {
+    min-height: 100%;
+    padding-top: 50px;
+    top: -50px;
+    position: relative;
+    z-index: -1;
+}
+
+.THIS h2 {
+    font-size: 2rem;    
+}
+
+.THIS h3 {
+    font-size: 1.4rem;
+    padding-bottom: 0.5rem;
+}
+
+.THIS .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.THIS .row .col {
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.THIS .comm-content-header {
+    padding: 0 !important;
+    margin: 0;
+}
+
+.THIS .comm-content-header .ui-widget {
+    margin: 0 !important;
+}
+
+.THIS .cWebNav {
+    background-color: black;
+}
+
+.THIS .comm-content-header .cWebVehiclePhoto {
+    background-size: 100% 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin-bottom: 1rem;
+}
+
+.THIS .comm-content-header .cWebVehiclePhoto img {
+     padding-top: 110px;
+}
+
+.THIS .uiTabset {
+    margin: 0 !important;
+    width: 100%;
+}
+
+.THIS .uiTabset .uiTabBar {
+    background-color: #464646;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;    
+}
+
+.THIS .uiTabset .uiTabBar > ul {
+    width: 100%;
+}
+
+.THIS .uiTabset .uiTabBar > ul .uiTabItem {
+    background-color: #464646;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 100% !important;
+}
+
+.THIS .uiTabset .uiTabBar > ul .uiTabItem .tabHeader {
+    color: white;
+}
+
+.THIS .active {
+    background-color: #2c2c2c !important;
+}
+
+.THIS .active > a {
+    border: 0 !important;
+    color: white !important;   
+}
+
+.THIS .uiTabset ul {
+    border-bottom: none;
+}
+
+.THIS .fullPage > .siteforceContentArea > .slds-grid {
+    max-width: 1000px;
+    width: 100%;
+    display: inline-flex;
+    padding-bottom: 50px;
+}
+
+.THIS .cWebFooter {
+    background-color: black;
+    color: white;
+}
+
+.THIS .cWebFooter a {
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .THIS .comm-content-header .cWebVehiclePhoto img {
+        padding-top: 70px;
+    }
+    
+    .THIS .uiTabset {
+        display: none;
+    }
+    
+    .THIS .sidebar {
+        display: none;
+    }
+}

@@ -17,12 +17,13 @@
     <genericErrorPage>Exception</genericErrorPage>
     <inMaintenancePage>InMaintenance</inMaintenancePage>
     <indexPage>CommunitiesLanding</indexPage>
-    <masterLabel>Electron Motors Website</masterLabel>
+    <masterLabel>Customers</masterLabel>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <requireHttps>true</requireHttps>
     <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>test-dnn3frdkfauq@example.com</siteAdmin>
+    <siteAdmin>test-s1cymi6szdmu@example.com</siteAdmin>
     <siteType>ChatterNetwork</siteType>
-    <subdomain>customer-force-761-dev-ed-1688cec29b6</subdomain>
+    <subdomain>java-momentum-5963-dev-ed-16992a6247c</subdomain>
+    <urlPathPrefix>customers</urlPathPrefix>
 </CustomSite>

@@ -11,7 +11,7 @@
     </actionOverrides>
     <brand>
         <headerColor>#ACD360</headerColor>
-        <logo>finance1</logo>
+        <logo>finance</logo>
         <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>

@@ -1,0 +1,9 @@
+<aura:component implements="forceCommunity:themeLayout,force:hasRecordId" access="global" description="Electron Home Layout">
+    <div>
+        <c:header />
+        <div class="fullPage">
+            {!v.body}
+            <c:footer />
+        </div>
+    </div>
+</aura:component>

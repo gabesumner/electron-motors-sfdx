@@ -1,0 +1,5 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="Home">
+    <div>
+        {!v.body}
+    </div>
+</aura:component>
