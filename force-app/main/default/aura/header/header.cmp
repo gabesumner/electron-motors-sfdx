@@ -4,7 +4,7 @@
     <aura:registerEvent name="modelSelectedEvent" type="c:modelSelectedEvent" />
     <nav class="slds-grid">
         <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 logo">
-            <a href=".">
+            <a href="/customers/s">
                 <img src="{!$Resource.electron_logo_horizontal}" />
             </a>
         </div>

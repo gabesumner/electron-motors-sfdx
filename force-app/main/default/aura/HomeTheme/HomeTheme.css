@@ -20,6 +20,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    min-width: 800px;
 }
 
 .THIS .contentRegion h1 {
@@ -34,6 +35,7 @@
 }
 
 .THIS .actions a {
+    display: inline-block;
     font-weight: 300;
     font-size: 0.8rem;
     letter-spacing: 0.1rem;
@@ -63,9 +65,19 @@
     transform: translate(-50%, 0%);    
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1200px) {
     .THIS .contentRegion h1 {
-        font-size: 2.5rem;
+        font-size: 3.2rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .THIS .contentRegion {
+        min-width: 500px;
+    }
+
+    .THIS .contentRegion h1 {
+        font-size: 2.2rem;
     }
     .THIS .actions a {
         display: block;

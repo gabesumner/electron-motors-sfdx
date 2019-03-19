@@ -40,9 +40,15 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
+    .THIS {
+        position: fixed;
+        top: 0;
+        left: 0;        
+    }
     .THIS .logo {
         text-align: center;
+        width: 100%;
     }
     
     .THIS .models {

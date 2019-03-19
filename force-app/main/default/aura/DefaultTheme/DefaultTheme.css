@@ -14,6 +14,7 @@
     top: -50px;
     position: relative;
     z-index: -1;
+    text-align: left;
 }
 
 .THIS h2 {
@@ -48,10 +49,6 @@
 
 .THIS .comm-content-header .ui-widget {
     margin: 0 !important;
-}
-
-.THIS .cWebNav {
-    background-color: black;
 }
 
 .THIS .comm-content-header .cWebVehiclePhoto {
@@ -111,22 +108,25 @@
 }
 
 .THIS .fullPage > .siteforceContentArea > .slds-grid {
-    max-width: 1000px;
     width: 100%;
     display: inline-flex;
     padding-bottom: 50px;
 }
 
-.THIS .cWebFooter {
+.THIS .cHeader, .THIS .cFooter {
     background-color: black;
     color: white;
 }
 
-.THIS .cWebFooter a {
+.THIS .cFooter a {
     color: white;
 }
 
 @media only screen and (max-width: 600px) {
+    .THIS .siteforceContentArea {
+        padding-top: 4rem;
+    }
+    
     .THIS .comm-content-header .cWebVehiclePhoto img {
         padding-top: 70px;
     }
