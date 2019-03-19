@@ -15,6 +15,8 @@
     position: relative;
     z-index: -1;
     text-align: left;
+    margin-left: 2rem;
+    margin-right: 2rem;    
 }
 
 .THIS h2 {
@@ -122,7 +124,13 @@
     color: white;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
+
+    .THIS .fullPage {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
     .THIS .siteforceContentArea {
         padding-top: 4rem;
     }
