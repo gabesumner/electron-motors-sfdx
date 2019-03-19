@@ -73,7 +73,7 @@
 
 @media only screen and (max-width: 800px) {
     .THIS .contentRegion {
-        min-width: 500px;
+        min-width: inherit;
     }
 
     .THIS .contentRegion h1 {
@@ -81,8 +81,6 @@
     }
     .THIS .actions a {
         display: block;
-        margin-left: 3em;
-        margin-right: 3em;
         margin-bottom: 1em;
     }
     .THIS .contentRegion {

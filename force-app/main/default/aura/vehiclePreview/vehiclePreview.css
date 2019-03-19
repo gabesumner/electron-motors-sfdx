@@ -33,3 +33,10 @@
         left: 0;
     }
 }
+
+@media only screen and (max-width: 800px) {
+    .THIS .photo-wrapper img {
+        padding-left: 10px;
+        padding-right: 10px;    
+    }    
+}

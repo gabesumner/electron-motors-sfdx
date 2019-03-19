@@ -3,12 +3,15 @@
     <aura:attribute name="login" type="String" default="Login" />
     <aura:registerEvent name="modelSelectedEvent" type="c:modelSelectedEvent" />
     <nav class="slds-grid">
-        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 logo">
+        <div class="slds-col menu">
+            <lightning:icon iconName="utility:rows" size="small" />
+        </div>
+        <div class="slds-col logo">
             <a href="/customers/s">
                 <img src="{!$Resource.electron_logo_horizontal}" />
             </a>
         </div>
-        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 models">
+        <div class="slds-col models">
             <span class="slds-p-horizontal_x-large">
                 <ui:outputText value="Flint" class="link" click="{!c.clickedModel}" />
             </span>
@@ -19,8 +22,11 @@
                 <ui:outputText value="Flash" class="link" click="{!c.clickedModel}" />
             </span>
         </div>
-        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 login">
+        <div class="slds-col login">
             <span><a href="./login">{!v.login}</a></span>
+        </div>
+        <div class="slds-col alert">
+            <lightning:icon iconName="utility:notification" size="small" />
         </div>
     </nav>
 </aura:component>

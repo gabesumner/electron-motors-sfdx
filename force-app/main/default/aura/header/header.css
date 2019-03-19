@@ -16,8 +16,16 @@
     height: 50px;
 }
 
+.THIS .slds-icon-text-default {
+    fill: white;
+}
+
 .THIS .logo {
     text-align: left;
+}
+
+.THIS .menu, .THIS .alert {
+    display: none;
 }
 
 .THIS .models {
@@ -42,9 +50,12 @@
 
 @media only screen and (max-width: 800px) {
     .THIS {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;    
         position: fixed;
         top: 0;
-        left: 0;        
+        left: 0;
+        background-color: black;
     }
     .THIS .logo {
         text-align: center;
@@ -54,6 +65,10 @@
     .THIS .models {
         display: none;
         text-align: center;
+    }
+
+    .THIS .menu, .THIS .alert {
+        display: block;
     }
     
     .THIS .login {
