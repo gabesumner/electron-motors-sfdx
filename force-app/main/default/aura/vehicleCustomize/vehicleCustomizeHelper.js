@@ -44,7 +44,7 @@
         $A.enqueueAction(action);
     },
     fireVehicleIdSetEvent: function(vehicleId) {
-        var appEvent = $A.get("e.c:webVehicleIdSetEvent");
+        var appEvent = $A.get("e.c:vehicleIdSetEvent");
         appEvent.setParams({
             "vehicleId": vehicleId
         });

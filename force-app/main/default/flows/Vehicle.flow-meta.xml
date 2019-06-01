@@ -743,7 +743,7 @@ SAP Order: V-00001</stringValue>
         </rules>
     </decisions>
     <description>Complete vehicle delivery process.</description>
-    <interviewLabel>Vehicle-3_InterviewLabel</interviewLabel>
+    <interviewLabel>Vehicle-4_InterviewLabel</interviewLabel>
     <label>Vehicle Process</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -854,7 +854,7 @@ SAP Order: V-00001</stringValue>
         <object>Vehicle__c</object>
     </recordUpdates>
     <startElementReference>myDecision</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
