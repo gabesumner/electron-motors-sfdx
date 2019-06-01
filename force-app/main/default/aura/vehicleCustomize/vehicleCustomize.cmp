@@ -1,0 +1,76 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" controller="DemoController" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:handler event="c:vehicleIdSetEvent" action="{!c.handleVehicleIdSetEvent}"/>
+    <aura:handler event="c:modelSelectedEvent" action="{!c.handleModelSelectedEvent}"/>
+    <aura:attribute name="creatingVehicle" type="Boolean" default="false" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="vehicle" type="Object" />
+    <force:recordData aura:id="recordLoader"
+                      layoutType="FULL"
+                      mode="EDIT"
+                      recordId="{!v.recordId}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.vehicle}" />
+    <ltng:require scripts="{!$Resource.webScript}" afterScriptsLoaded="{!c.afterScriptsLoaded}" />    
+    
+    <div>
+        <div class="battery row">
+            <div data-value="Battery__c,75 kWh" class="{!v.vehicle.Battery__c == '75 kWh' ? 'col card selected' : 'col card'}" onclick="{!c.selectOption}">
+                <h2>75D</h2>
+                <div>75 kWh</div>
+                <div>Up to 259 miles</div>
+                <div>EPA range</div>
+            </div>
+            <div data-value="Battery__c,100 kWh" class="{!v.vehicle.Battery__c == '100 kWh' ? 'col card selected' : 'col card'}" onclick="{!c.selectOption}">
+                <h2>100D</h2>
+                <div>100 kWh</div>
+                <div>Up to 335 miles</div>
+                <div>EPA range</div>         
+            </div>
+            <div data-value="Battery__c,100P kWh" class="{!v.vehicle.Battery__c == '100P kWh' ? 'col card selected' : 'col card'}" onclick="{!c.selectOption}">
+                <h2>100P</h2>
+                <div>Zero to 60 in 2.5 sec</div>
+                <div>Up to 315 miles</div>
+                <div>EPA range</div>         
+            </div>
+        </div>    
+        <div class="card" style="text-align:left">
+            <h3>Paint</h3>
+            <div class="row">
+                <div data-value="Paint__c,0" class="{!v.vehicle.Paint__c == '0' ? 'col color red selected' : 'col color red'}" onclick="{!c.selectOption}"></div>
+                <div data-value="Paint__c,230" class="{!v.vehicle.Paint__c == '230' ? 'col color blue selected' : 'col color blue'}" onclick="{!c.selectOption}"></div>
+                <div data-value="Paint__c,130" class="{!v.vehicle.Paint__c == '130' ? 'col color green selected' : 'col color green'}" onclick="{!c.selectOption}"></div>
+                <div data-value="Paint__c,1000" class="{!v.vehicle.Paint__c == '1000' ? 'col color purple selected' : 'col color purple'}" onclick="{!c.selectOption}"></div>
+                <div data-value="Paint__c,4150" class="{!v.vehicle.Paint__c == '4150' ? 'col color teal selected' : 'col color teal'}" onclick="{!c.selectOption}"></div>
+                <div data-value="Paint__c,55" class="{!v.vehicle.Paint__c == '55' ? 'col color brown selected' : 'col color brown'}" onclick="{!c.selectOption}"></div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="card" style="text-align:left">
+            <h3>Options</h3>
+            <div class="options slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-3">
+                    <ui:inputCheckbox name="Self_Driving__c" label="Self Driving" value="{!v.vehicle.Self_Driving__c}" change="{!c.checkOption}" />
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-3">
+                    <ui:inputCheckbox name="Autopilot__c" label="Enhanced Autopilot" value="{!v.vehicle.Autopilot__c}" change="{!c.checkOption}" />
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-3">
+                    <ui:inputCheckbox name="Sunroof__c" label="Sunroof" value="{!v.vehicle.Sunroof__c}" change="{!c.checkOption}" />
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-3">
+                    <ui:inputCheckbox name="Spoiler__c" label="Carbon Fiber Spoiler" value="{!v.vehicle.Spoiler__c}" change="{!c.checkOption}" />
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-3">
+                    <ui:inputCheckbox name="Rear_Seats__c" label="Rear Seats" value="{!v.vehicle.Rear_Seats__c}" change="{!c.checkOption}" />
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-large-size_1-of-3">
+                    <ui:inputCheckbox name="Hydraulic_System__c" label="Hydraulic System" value="{!v.vehicle.Hydraulic_System__c}" change="{!c.checkOption}" />
+                </div>
+            </div>                    
+        </div>
+        <div style="clear: both;"></div>        
+    </div>
+</aura:component>

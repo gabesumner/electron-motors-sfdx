@@ -1,0 +1,71 @@
+.THIS {
+    background-color: rgb(44, 44, 44) !important;
+    padding: 0 !important;
+    color: white;
+    position: relative;
+}
+
+.THIS .content {
+    min-height: 400px;
+    padding: 1rem .5rem 0 .5rem;
+}
+
+.THIS .content h2 {
+    padding: 0;
+    font-size: 2.5rem;
+}
+
+.THIS .content h3 {
+    padding: 1rem 0 1rem 0;
+    line-height: 1rem;
+}
+
+.THIS .content p {
+    padding-bottom: 0.5rem;
+}
+
+.THIS .content .slds-form-element {
+    text-align: left;
+    padding: 1rem 1.5rem 0 1.5rem;
+}
+
+.THIS .content .slds-input, .THIS .content select {
+    color: black;
+}
+
+.THIS .content .slds-form-element__label {
+    font-size: 0.8rem;
+    color: #C6C6C6;
+}
+
+.THIS .delivery .slds-icon-text-default {
+    fill: white;
+}
+
+.THIS .bottom-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.THIS .bottom-wrapper .delivery {
+    background-color: black;
+    padding: 1.5rem;
+    text-align: center;
+    padding: 0.8rem;
+}
+
+.THIS .bottom-wrapper .actions button {
+    background-color: #464646;
+    border: none;
+    color: white;
+    padding: 0.8rem;
+    margin: 0;
+    width: 100%;
+    display: block;
+}
+
+.THIS .bottom-wrapper .actions button.primary {
+    background-color: #c00;
+}

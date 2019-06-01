@@ -1,0 +1,55 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" controller="DemoController" access="global" >
+    <aura:handler event="c:vehicleIdSetEvent" action="{!c.handleVehicleIdSetEvent}"/>        
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="vehicle" type="Object" />
+    
+    <aura:attribute name="Price" type="String" default="0" />
+    <aura:attribute name="Downpayment" type="String" default="1000" />
+    <aura:attribute name="Rate" type="String" />
+    <aura:attribute name="Terms" type="String" default="60" />
+    <aura:attribute name="MonthlyPayment" type="String" />
+    <aura:attribute name="TotalPayment" type="String" />
+    <aura:attribute name="TotalInterest" type="String" />
+    
+    <force:recordData aura:id="recordLoader"
+                      layoutType="FULL"
+                      mode="VIEW"
+                      recordId="{!v.recordId}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.vehicle}"
+                      recordUpdated="{!c.handleRecordUpdated}" />
+    <div>
+        <div class="content">
+            <div aura:id="paymentContainer">
+                <h2><ui:outputCurrency value="{!v.MonthlyPayment}" format="$#,###" /></h2>
+                <p>Estimated Monthly Payment</p>
+                <lightning:input type="number" value="{!v.Downpayment}" label="Downpayment" formatter="currency" step="1" onchange="{!c.updatePayment}" />
+                <lightning:select value="{!v.Terms}" label="Term" onchange="{!c.updatePayment}" >
+                    <option value="60">60 months</option>
+                    <option value="72">72 months</option>
+                </lightning:select>
+            </div>
+            <div aura:id="successContainer" style="display:none">
+                <h3>Congratulations!</h3>
+                <p>Thank you for your purchase. Your loan application has been submitted and is being reviwed by our loan officers.</p>
+            </div>
+        </div>
+        
+        <div class="bottom-wrapper">
+            <div class="delivery">
+                <lightning:icon iconName="utility:event" size="x-small" />
+                June Delivery
+            </div>
+            <div aura:id="buttonsContainer" class="row actions">
+                <div class="col">
+                    <lightning:button label="Save Design" onclick="{! c.saveClick }" />
+                </div>
+                <div class="col">
+                    <lightning:button class="primary" label="Apply" onclick="{! c.applyClick }" />
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</aura:component>

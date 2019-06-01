@@ -21,7 +21,7 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Finance</label>
     <navType>Standard</navType>
-    <tabs>Finance_Home</tabs>
+    <tabs>standard-home</tabs>
     <tabs>standard-Dashboard</tabs>
     <tabs>standard-Contact</tabs>
     <tabs>Vehicle__c</tabs>

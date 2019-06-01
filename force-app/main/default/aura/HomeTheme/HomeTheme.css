@@ -9,6 +9,7 @@
     background-attachment: fixed;
     font-size: 1.2rem;
     text-align: center;
+    overflow: hidden;    
 }
 
 .THIS .siteforceContentArea {

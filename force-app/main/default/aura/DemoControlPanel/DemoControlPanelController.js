@@ -24,14 +24,14 @@
     },
     
 	createAccount : function(component, event, helper) {
-        helper.createAccount(component);
+        helper.createAccounts(component, 1);
 	},
     
-    createAccounts : function(component, event, helper) {
-        helper.createAccounts(component, helper, 0, 10);
+    createAccounts10 : function(component, event, helper) {
+        helper.createAccounts(component, 10);
     },
     
-    createAccounts50 : function(component, event, helper) {
-        helper.createAccounts(component, helper, 0, 50);
+    createAccounts100 : function(component, event, helper) {
+        helper.createAccounts(component, 100);
     },    
 })
