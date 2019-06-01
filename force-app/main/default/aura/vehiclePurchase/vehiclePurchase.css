@@ -7,34 +7,35 @@
 
 .THIS .content {
     min-height: 400px;
+    padding: 1rem .5rem 0 .5rem;
 }
 
 .THIS .content h2 {
-    padding: 1rem 0 1.3rem 0;
-    font-size: 2.3rem;
+    padding: 0;
+    font-size: 2.5rem;
 }
 
 .THIS .content h3 {
-    padding: 0 0 0.3rem 0;
+    padding: 1rem 0 1rem 0;
     line-height: 1rem;
 }
 
 .THIS .content p {
-    padding-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
 }
 
-.THIS .content .payment {
-    padding: 1rem 1.5rem 0 1.5rem;
+.THIS .content .slds-form-element {
     text-align: left;
+    padding: 1rem 1.5rem 0 1.5rem;
+}
+
+.THIS .content .slds-input, .THIS .content select {
+    color: black;
 }
 
 .THIS .content .slds-form-element__label {
     font-size: 0.8rem;
     color: #C6C6C6;
-}
-
-.THIS .content .slds-form-element {
-    padding-bottom: 0.4rem;
 }
 
 .THIS .delivery .slds-icon-text-default {

@@ -1,9 +1,17 @@
-<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+<aura:component implements="forceCommunity:availableForAllPageTypes" controller="DemoController" access="global" >
     <aura:handler event="c:vehicleIdSetEvent" action="{!c.handleVehicleIdSetEvent}"/>        
     <aura:attribute name="recordId" type="String" />
     <aura:attribute name="record" type="Object" />
     <aura:attribute name="vehicle" type="Object" />
-    <aura:attribute name="price" type="Integer" />
+    
+    <aura:attribute name="Price" type="String" default="0" />
+    <aura:attribute name="Downpayment" type="String" default="1000" />
+    <aura:attribute name="Rate" type="String" />
+    <aura:attribute name="Terms" type="String" default="60" />
+    <aura:attribute name="MonthlyPayment" type="String" />
+    <aura:attribute name="TotalPayment" type="String" />
+    <aura:attribute name="TotalInterest" type="String" />
+    
     <force:recordData aura:id="recordLoader"
                       layoutType="FULL"
                       mode="VIEW"
@@ -13,38 +21,18 @@
                       recordUpdated="{!c.handleRecordUpdated}" />
     <div>
         <div class="content">
-            <div class="estimate">
-                <h2><ui:outputCurrency value="{!v.price}" format="$#,###" /></h2>
-                <h3><ui:outputCurrency value="{!v.price * 0.04}" format="$#,###" /></h3>
-                <p>Estimated taxes.</p>
-                <h3>$5,000</h3>
-                <p>Estimated annual gas savings.</p>
+            <div aura:id="paymentContainer">
+                <h2><ui:outputCurrency value="{!v.MonthlyPayment}" format="$#,###" /></h2>
+                <p>Estimated Monthly Payment</p>
+                <lightning:input type="number" value="{!v.Downpayment}" label="Downpayment" formatter="currency" step="1" onchange="{!c.updatePayment}" />
+                <lightning:select value="{!v.Terms}" label="Term" onchange="{!c.updatePayment}" >
+                    <option value="60">60 months</option>
+                    <option value="72">72 months</option>
+                </lightning:select>
             </div>
-            <div class="payment" style="display:none">
-                <lightning:input name="fullname" label="Full Name (as it appears on credit card)" />
-                <lightning:input name="cardnumber" label="Credit Card Number" />
-                <div class="slds-grid slds-gutters">
-                    <div class="slds-col">
-                        <lightning:select name="cardmonth" label="Month">
-                            <option value="1">01 - Jan</option>
-                            <option value="2">02 - Feb</option>
-                            <option value="3">03 - Mar</option>
-                        </lightning:select>
-                    </div>
-                    <div class="slds-col">    
-                        <lightning:select name="cardyear" label="Year">
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                        </lightning:select>
-                    </div>
-                </div>
-                <lightning:input name="cardcvv" label="CVV Code" />
+            <div aura:id="successContainer" style="display:none">
+                <h3>Congratulations!</h3>
+                <p>Thank you for your purchase. Your loan application has been submitted and is being reviwed by our loan officers.</p>
             </div>
         </div>
         
@@ -53,12 +41,12 @@
                 <lightning:icon iconName="utility:event" size="x-small" />
                 June Delivery
             </div>
-            <div class="row actions">
+            <div aura:id="buttonsContainer" class="row actions">
                 <div class="col">
                     <lightning:button label="Save Design" onclick="{! c.saveClick }" />
                 </div>
                 <div class="col">
-                    <lightning:button class="primary" label="Next" onclick="{! c.purchaseClick }" />
+                    <lightning:button class="primary" label="Apply" onclick="{! c.applyClick }" />
                 </div>
             </div>
         </div>

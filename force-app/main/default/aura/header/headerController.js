@@ -8,7 +8,8 @@
                 var state = response.getState();
                 if (state === "SUCCESS") {
                     var firstname = response.getReturnValue();
-                    component.set("v.login", 'Hi, ' + firstname);
+                    //component.set("v.login", 'Hi, ' + firstname);
+                    component.set("v.login", 'Account');
                 }
             });
             $A.enqueueAction(action);

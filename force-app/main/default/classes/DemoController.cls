@@ -69,6 +69,29 @@ public with sharing class DemoController {
         return vehicle.Id;
     }
 
+    @AuraEnabled
+    public static String createLoanForUser(String vehicleID, String price, String terms, String downpayment) {
+        Contact contact = getContactForCurrentUser();
+        Loan__c loan = new Loan__c();
+        loan.Price__c = integer.valueof(price);
+        loan.Terms__c = integer.valueof(terms);
+        loan.Interest__c = 6.00;
+        loan.Downpayment__c = integer.valueof(downpayment);
+        loan.Status__c = 'Pending';
+        loan.Customer__c = contact.Id;
+        loan.Vehicle__c = vehicleID;
+        loan.FirstName__c = contact.FirstName;
+        loan.LastName__c = contact.LastName;
+        loan.Employer__c = contact.Employer__c;
+        insert loan;
+        
+        Vehicle__c vehicle = [SELECT Id, Status__c FROM Vehicle__c WHERE Id = :vehicleID LIMIT 1];
+        vehicle.Status__c = 'Purchase';
+        update vehicle;
+        
+        return loan.Id;        
+    }
+
     public static void CreateReema() {        
         Account account = new Account();
         account.Name = 'Reema Karr';
@@ -80,6 +103,7 @@ public with sharing class DemoController {
 
         Contact contact = CreateContact(account);
         contact.LeadSource = 'Web';
+        contact.Username__c = UserInfo.getUserName();
         insert contact;
     }
 
