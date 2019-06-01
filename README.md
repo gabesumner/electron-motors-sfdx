@@ -11,51 +11,22 @@ git clone https://github.com/gabesumner/electron-motors-sfdx
 cd electron-motors-sfdx
 ```
 
-2. Create a scratch org and provide it with an alias:
+2. Install **shane-sfdx-plugins** (if you don't already have it)
 
   ```
-  sfdx force:org:create -s -f config/project-scratch-def.json -a electron
+  sfdx plugins:install shane-sfdx-plugins
   ```
 
-3. Push the app to your scratch org:
+3. Run the startup script
 
   ```
-  sfdx force:source:push
+  sh orgInit.sh
   ```
 
-4. Assign the **electron** permission set to the default user:
+4. In **Setup**, under **Themes and Branding**, activate the **Electron Motors** theme.
 
-  ```
-  sfdx force:user:permset:assign -n electron
-  ```
+5. Use the **App Launcher** and click **Demo Control Panel**.
 
-5. Open the scratch org:
+6. Use the buttons to generate Accounts, Contacts, and Vehicles.
 
-  ```
-  sfdx force:org:open
-  ```
-
-6. In **Setup**, under **Themes and Branding**, activate the **Electron Motors** theme.
-
-7. Use the **App Launcher** and click **Demo Control Panel**.
-
-8. Use the buttons to generate Accounts, Contacts, and Vehicles.
-
-9. Go to **Setup** then **All Communities** click **Builder** for the **Customers** and click **Publish**.
-
-10. Use the **App Launcher**, click **Sales**, then navigate to **Vehicles**.
-
-### Communities Setup
-
-Complete these steps if you want to involve Communities in your demo.
-
-1. Visit **Setup -> Users -> Roles** and create a new **Administrator** role.
-
-2. Visit **Setup -> Users -> Users**, edit your account, then assign your new role to your account.
-
-3. Visit **Setup -> Security -> Login Access Policies** and enable the **Administrators Can Log in as Any User** setting.
-
-4. Visit the Contact who will represent your buyer and click **Enable Customer User**.
-
-5. On the same Contact click **Login to Community as User**.
-
+7. Use the **App Launcher**, click **Sales**, then navigate to **Vehicles**.
