@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Purchased_Vehicles</fullName>
+    <columns>NAME</columns>
+    <columns>Owner__c</columns>
+    <columns>Model__c</columns>
+    <columns>Status__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Purchase</value>
+    </filters>
+    <filters>
+        <field>Prediction_Sample__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Purchased Vehicles</label>
+</ListView>

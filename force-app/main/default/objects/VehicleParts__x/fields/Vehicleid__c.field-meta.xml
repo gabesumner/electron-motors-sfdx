@@ -11,7 +11,7 @@
     <length>128</length>
     <referenceTargetField>Vehicle__c.SAP_ID__c</referenceTargetField>
     <referenceTo>Vehicle__c</referenceTo>
-    <relationshipLabel>VehicleParts</relationshipLabel>
+    <relationshipLabel>Vehicle Parts</relationshipLabel>
     <relationshipName>VehicleParts</relationshipName>
     <type>IndirectLookup</type>
 </CustomField>

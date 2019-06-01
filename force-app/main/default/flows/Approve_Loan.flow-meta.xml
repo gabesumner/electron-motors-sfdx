@@ -1,16 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Update_Duplicate</name>
+        <label>Update Duplicate</label>
+        <locationX>814</locationX>
+        <locationY>198</locationY>
+        <assignmentItems>
+            <assignToReference>oldVehicle.SAP_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue/>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>saveDuplicate</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Vehicle</name>
+        <label>Update Vehicle</label>
+        <locationX>625</locationX>
+        <locationY>498</locationY>
+        <assignmentItems>
+            <assignToReference>vehicle.SAP_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>V-00001</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Save_Vehicle</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Duplicates_Exist</name>
+        <label>Duplicates Exist</label>
+        <locationX>616</locationX>
+        <locationY>317</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>duplicatesIsNotNull</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>oldVehicle</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Duplicate</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+        <rules>
+            <name>duplicatesIsNull</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>oldVehicle</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getVehicle</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
     <interviewLabel>Approve Loan {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Approve Loan</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
     <processType>Flow</processType>
+    <recordLookups>
+        <name>getDuplicate</name>
+        <label>Get Duplicate</label>
+        <locationX>467</locationX>
+        <locationY>315</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Duplicates_Exist</targetReference>
+        </connector>
+        <filters>
+            <field>SAP_ID__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>V-00001</stringValue>
+            </value>
+        </filters>
+        <object>Vehicle__c</object>
+        <outputReference>oldVehicle</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>SAP_ID__c</queriedFields>
+    </recordLookups>
     <recordLookups>
         <name>getLoan</name>
         <label>Get loan</label>
         <locationX>329</locationX>
-        <locationY>201</locationY>
+        <locationY>173</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>saveChanges</targetReference>
+            <targetReference>saveLoan</targetReference>
         </connector>
         <filters>
             <field>Id</field>
@@ -32,14 +128,59 @@
             <assignToReference>loan.Status__c</assignToReference>
             <field>Status__c</field>
         </outputAssignments>
+        <outputAssignments>
+            <assignToReference>loan.Vehicle__c</assignToReference>
+            <field>Vehicle__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>getVehicle</name>
+        <label>Get Vehicle</label>
+        <locationX>794</locationX>
+        <locationY>498</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Vehicle</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>loan.Vehicle__c</elementReference>
+            </value>
+        </filters>
+        <object>Vehicle__c</object>
+        <outputReference>vehicle</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>SAP_ID__c</queriedFields>
     </recordLookups>
     <recordUpdates>
-        <name>saveChanges</name>
-        <label>saveChanges</label>
+        <name>Save_Vehicle</name>
+        <label>Save Vehicle</label>
+        <locationX>469</locationX>
+        <locationY>498</locationY>
+        <connector>
+            <targetReference>notificationScreen</targetReference>
+        </connector>
+        <inputReference>vehicle</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>saveDuplicate</name>
+        <label>Save Duplicate</label>
+        <locationX>924</locationX>
+        <locationY>316</locationY>
+        <connector>
+            <targetReference>getVehicle</targetReference>
+        </connector>
+        <inputReference>oldVehicle</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>saveLoan</name>
+        <label>Save Loan</label>
         <locationX>329</locationX>
         <locationY>315</locationY>
         <connector>
-            <targetReference>notificationScreen</targetReference>
+            <targetReference>getDuplicate</targetReference>
         </connector>
         <filters>
             <field>Id</field>
@@ -59,8 +200,8 @@
     <screens>
         <name>notificationScreen</name>
         <label>Success</label>
-        <locationX>327</locationX>
-        <locationY>425</locationY>
+        <locationX>326</locationX>
+        <locationY>498</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -83,10 +224,26 @@
         <objectType>Loan__c</objectType>
     </variables>
     <variables>
+        <name>oldVehicle</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Vehicle__c</objectType>
+    </variables>
+    <variables>
         <name>recordId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>vehicle</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Vehicle__c</objectType>
     </variables>
 </Flow>

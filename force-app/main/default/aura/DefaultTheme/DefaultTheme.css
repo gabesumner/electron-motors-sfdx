@@ -4,7 +4,6 @@
     width: 100%;
     top: 0;
     font-size: 1rem;
-    text-align: center;
     z-index: -1;
 }
 
@@ -14,9 +13,8 @@
     top: -50px;
     position: relative;
     z-index: -1;
-    text-align: left;
-    margin-left: 2rem;
-    margin-right: 2rem;    
+    text-align: center;
+    overflow: hidden;
 }
 
 .THIS h2 {
@@ -53,14 +51,14 @@
     margin: 0 !important;
 }
 
-.THIS .comm-content-header .cWebVehiclePhoto {
+.THIS .comm-content-header .cVehiclePreview {
     background-size: 100% 100%;
     background-position: bottom;
     background-repeat: no-repeat;
     margin-bottom: 1rem;
 }
 
-.THIS .comm-content-header .cWebVehiclePhoto img {
+.THIS .comm-content-header .cVehiclePreview img {
      padding-top: 110px;
 }
 
@@ -90,6 +88,7 @@
     -ms-flex-positive: 1;
     flex-grow: 1;
     width: 100% !important;
+    text-align: center;
 }
 
 .THIS .uiTabset .uiTabBar > ul .uiTabItem .tabHeader {
@@ -110,6 +109,7 @@
 }
 
 .THIS .fullPage > .siteforceContentArea > .slds-grid {
+    max-width: 1000px;
     width: 100%;
     display: inline-flex;
     padding-bottom: 50px;
@@ -135,7 +135,7 @@
         padding-top: 4rem;
     }
     
-    .THIS .comm-content-header .cWebVehiclePhoto img {
+    .THIS .comm-content-header .VehiclePreview img {
         padding-top: 70px;
     }
     

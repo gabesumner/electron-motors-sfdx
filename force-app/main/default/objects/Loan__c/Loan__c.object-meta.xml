@@ -51,10 +51,12 @@
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
     <label>Loan</label>
     <nameField>
         <displayFormat>I-{00000}</displayFormat>
@@ -68,6 +70,7 @@
         <searchResultsAdditionalFields>LastName__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Price__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Terms__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

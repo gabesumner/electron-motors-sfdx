@@ -1,0 +1,92 @@
+{
+    "dataSourceLinks": [],
+    "filters": [],
+    "gridLayouts": [],
+    "layouts": [],
+    "steps": {
+        "aggregateflex": {
+            "broadcastFacet": false,
+            "datasets": [
+                {
+                    "name": "Vehicles"
+                }
+            ],
+            "isGlobal": false,
+            "query": {
+                "query": "{\"measures\":[[\"count\",\"*\"]],\"groups\":[\"Status__c\"]}",
+                "version": -1.0
+            },
+            "receiveFacet": false,
+            "selectMode": "multi",
+            "type": "aggregateflex",
+            "useGlobal": true,
+            "visualizationParameters": {
+                "options": {},
+                "visualizationType": "pie"
+            }
+        }
+    },
+    "widgets": {
+        "aggregateflex_chart": {
+            "parameters": {
+                "centerText": "",
+                "legend": {
+                    "descOrder": false,
+                    "showHeader": true,
+                    "show": true,
+                    "customSize": "auto",
+                    "position": "right-top",
+                    "inside": false
+                },
+                "showMeasureTitle": true,
+                "tooltip": {
+                    "showBinLabel": true,
+                    "measures": "",
+                    "showNullValues": true,
+                    "showPercentage": true,
+                    "showDimensions": true,
+                    "showMeasures": true,
+                    "customizeTooltip": false,
+                    "dimensions": ""
+                },
+                "visualizationType": "pie",
+                "exploreLink": true,
+                "title": {
+                    "fontSize": 14,
+                    "subtitleFontSize": 11,
+                    "label": "",
+                    "align": "center",
+                    "subtitleLabel": ""
+                },
+                "trellis": {
+                    "flipLabels": false,
+                    "showGridLines": true,
+                    "size": [
+                        100,
+                        100
+                    ],
+                    "enable": false,
+                    "type": "x",
+                    "chartsPerLine": 4
+                },
+                "inner": 60,
+                "columnMap": {
+                    "trellis": [],
+                    "dimension": [
+                        "Status__c"
+                    ],
+                    "plots": [
+                        "count"
+                    ]
+                },
+                "showActionMenu": true,
+                "centerValueType": "number",
+                "valueType": "compactNumber",
+                "theme": "wave",
+                "step": "aggregateflex",
+                "applyConditionalFormatting": true
+            },
+            "type": "chart"
+        }
+    }
+}

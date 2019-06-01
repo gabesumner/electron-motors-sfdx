@@ -36,6 +36,12 @@
         component.find("recordEdit").saveRecord($A.getCallback(function (saveResult) {
             if (saveResult.state === "SUCCESS" || saveResult.state === "DRAFT") {
                 console.log("Save completed successfully.");
+                var toastEvent = $A.get("e.force:showToast");
+                toastEvent.setParams({
+                    "message": "Vehicle updated.",
+                    "type": "success"
+                });
+                toastEvent.fire();
             } else if (saveResult.state === "INCOMPLETE") {
                 console.log("User is offline, device doesn't support drafts.");
             } else if (saveResult.state === "ERROR") {

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manufactured_Vehicles</fullName>
+    <columns>NAME</columns>
+    <columns>Owner__c</columns>
+    <columns>Model__c</columns>
+    <columns>Manufacturing_Status__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Manufacturing</value>
+    </filters>
+    <label>Manufactured Vehicles</label>
+</ListView>

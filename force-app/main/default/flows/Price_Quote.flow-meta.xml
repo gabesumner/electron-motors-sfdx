@@ -4,7 +4,7 @@
         <name>add100</name>
         <label>+10,000</label>
         <locationX>260</locationX>
-        <locationY>553</locationY>
+        <locationY>759</locationY>
         <assignmentItems>
             <assignToReference>price</assignToReference>
             <operator>Add</operator>
@@ -20,7 +20,7 @@
         <name>addAutopilot</name>
         <label>+5,000</label>
         <locationX>438</locationX>
-        <locationY>806</locationY>
+        <locationY>1012</locationY>
         <assignmentItems>
             <assignToReference>price</assignToReference>
             <operator>Add</operator>
@@ -36,7 +36,7 @@
         <name>addBattery100P</name>
         <label>+12,000</label>
         <locationX>418</locationX>
-        <locationY>552</locationY>
+        <locationY>758</locationY>
         <assignmentItems>
             <assignToReference>price</assignToReference>
             <operator>Add</operator>
@@ -52,7 +52,7 @@
         <name>addBattery75</name>
         <label>+5,000</label>
         <locationX>106</locationX>
-        <locationY>553</locationY>
+        <locationY>759</locationY>
         <assignmentItems>
             <assignToReference>price</assignToReference>
             <operator>Add</operator>
@@ -68,7 +68,7 @@
         <name>addFlarePrice</name>
         <label>+40,000</label>
         <locationX>262</locationX>
-        <locationY>300</locationY>
+        <locationY>506</locationY>
         <assignmentItems>
             <assignToReference>price</assignToReference>
             <operator>Add</operator>
@@ -84,7 +84,7 @@
         <name>addFlashPrice</name>
         <label>+50,000</label>
         <locationX>412</locationX>
-        <locationY>301</locationY>
+        <locationY>507</locationY>
         <assignmentItems>
             <assignToReference>price</assignToReference>
             <operator>Add</operator>
@@ -100,7 +100,7 @@
         <name>addFlintPrice</name>
         <label>+30,000</label>
         <locationX>111</locationX>
-        <locationY>298</locationY>
+        <locationY>504</locationY>
         <assignmentItems>
             <assignToReference>price</assignToReference>
             <operator>Add</operator>
@@ -116,7 +116,7 @@
         <name>addHydraulicSystem</name>
         <label>+1,100</label>
         <locationX>1102</locationX>
-        <locationY>793</locationY>
+        <locationY>999</locationY>
         <assignmentItems>
             <assignToReference>price</assignToReference>
             <operator>Add</operator>
@@ -125,14 +125,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>showPrice</targetReference>
+            <targetReference>Return_Price</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>addRearSeats</name>
         <label>+1,300</label>
         <locationX>933</locationX>
-        <locationY>796</locationY>
+        <locationY>1002</locationY>
         <assignmentItems>
             <assignToReference>price</assignToReference>
             <operator>Add</operator>
@@ -148,7 +148,7 @@
         <name>addSelfDriving</name>
         <label>+3,000</label>
         <locationX>259</locationX>
-        <locationY>801</locationY>
+        <locationY>1007</locationY>
         <assignmentItems>
             <assignToReference>price</assignToReference>
             <operator>Add</operator>
@@ -164,7 +164,7 @@
         <name>addSpoiler</name>
         <label>+775</label>
         <locationX>771</locationX>
-        <locationY>800</locationY>
+        <locationY>1006</locationY>
         <assignmentItems>
             <assignToReference>price</assignToReference>
             <operator>Add</operator>
@@ -180,7 +180,7 @@
         <name>addSunroof</name>
         <label>+1,500</label>
         <locationX>607</locationX>
-        <locationY>802</locationY>
+        <locationY>1008</locationY>
         <assignmentItems>
             <assignToReference>price</assignToReference>
             <operator>Add</operator>
@@ -192,11 +192,24 @@
             <targetReference>ifSpoiler</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Return_Price</name>
+        <label>Return Price</label>
+        <locationX>1273</locationX>
+        <locationY>880</locationY>
+        <assignmentItems>
+            <assignToReference>price</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>price</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
     <decisions>
         <name>checkBattery</name>
         <label>Check Battery</label>
         <locationX>261</locationX>
-        <locationY>418</locationY>
+        <locationY>624</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>ifBattery75</name>
@@ -248,7 +261,7 @@
         <name>checkModel</name>
         <label>Check Model</label>
         <locationX>260</locationX>
-        <locationY>157</locationY>
+        <locationY>363</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>ifModelFlint</name>
@@ -297,10 +310,47 @@
         </rules>
     </decisions>
     <decisions>
+        <name>HasVehicleDecision</name>
+        <label>Has Vehicle</label>
+        <locationX>258</locationX>
+        <locationY>180</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>HasVehicleTrue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vehicle</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getVehicle</targetReference>
+            </connector>
+            <label>False</label>
+        </rules>
+        <rules>
+            <name>HasVehicleFalse</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vehicle</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>checkModel</targetReference>
+            </connector>
+            <label>True</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>ifAutopilot</name>
         <label>Autopilot</label>
         <locationX>439</locationX>
-        <locationY>672</locationY>
+        <locationY>878</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>isAutopilot</name>
@@ -337,7 +387,7 @@
         <name>ifHydraulicSystem</name>
         <label>Hydraulic System</label>
         <locationX>1096</locationX>
-        <locationY>671</locationY>
+        <locationY>877</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>isHydraulicSystem</name>
@@ -365,7 +415,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>showPrice</targetReference>
+                <targetReference>Return_Price</targetReference>
             </connector>
             <label>No</label>
         </rules>
@@ -374,7 +424,7 @@
         <name>ifRearSeats</name>
         <label>Rear Seats</label>
         <locationX>932</locationX>
-        <locationY>672</locationY>
+        <locationY>878</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>isRearSeats</name>
@@ -411,7 +461,7 @@
         <name>ifSelfDriving</name>
         <label>Self Driving</label>
         <locationX>259</locationX>
-        <locationY>673</locationY>
+        <locationY>879</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>isSelfDriving</name>
@@ -448,7 +498,7 @@
         <name>ifSpoiler</name>
         <label>Spoiler</label>
         <locationX>771</locationX>
-        <locationY>670</locationY>
+        <locationY>876</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>isSpoiler</name>
@@ -485,7 +535,7 @@
         <name>ifSunroof</name>
         <label>Sunroof</label>
         <locationX>605</locationX>
-        <locationY>671</locationY>
+        <locationY>877</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>isSunroof</name>
@@ -520,12 +570,18 @@
     </decisions>
     <interviewLabel>Price Quote {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Price Quote</label>
-    <processType>Flow</processType>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
     <recordLookups>
         <name>getVehicle</name>
         <label>Get vehicle</label>
-        <locationX>259</locationX>
-        <locationY>40</locationY>
+        <locationX>520</locationX>
+        <locationY>256</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>checkModel</targetReference>
@@ -549,23 +605,7 @@
         <queriedFields>Rear_Seats__c</queriedFields>
         <queriedFields>Hydraulic_System__c</queriedFields>
     </recordLookups>
-    <screens>
-        <name>showPrice</name>
-        <label>Show Price</label>
-        <locationX>1343</locationX>
-        <locationY>668</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>outputPrice</name>
-            <fieldText>{!price}</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>false</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <startElementReference>getVehicle</startElementReference>
+    <startElementReference>HasVehicleDecision</startElementReference>
     <status>Active</status>
     <variables>
         <name>price</name>
@@ -589,7 +629,7 @@
         <name>vehicle</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
-        <isInput>false</isInput>
+        <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Vehicle__c</objectType>
     </variables>

@@ -47,13 +47,13 @@
         <processMetadataValues>
             <name>textJson</name>
             <value>
-                <stringValue>{&quot;mentions&quot;:[],&quot;message&quot;:&quot;This vehicle is now ready for manufacturing. &quot;}</stringValue>
+                <stringValue>{&quot;mentions&quot;:[],&quot;message&quot;:&quot;This vehicle is now ready for manufacturing.\n\nSAP Order: V-00001&quot;}</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_5_A2</name>
+        <name>myRule_5_A1</name>
         <label>Notify manufacturing</label>
         <locationX>500</locationX>
-        <locationY>300</locationY>
+        <locationY>200</locationY>
         <actionName>chatterPost</actionName>
         <actionType>chatterPost</actionType>
         <connector>
@@ -62,7 +62,38 @@
         <inputParameters>
             <name>text</name>
             <value>
-                <stringValue>This vehicle is now ready for manufacturing. </stringValue>
+                <stringValue>This vehicle is now ready for manufacturing.
+
+SAP Order: V-00001</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
+            <name>textJson</name>
+            <value>
+                <stringValue>{&quot;mentions&quot;:[],&quot;message&quot;:&quot;This vehicle is ready for delivery.&quot;}</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_7_A2</name>
+        <label>Notify team</label>
+        <locationX>700</locationX>
+        <locationY>300</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <stringValue>This vehicle is ready for delivery.</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -82,10 +113,10 @@
                 <stringValue>Vehicle Delivered</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_7_A2</name>
-        <label>Notify the team</label>
-        <locationX>700</locationX>
-        <locationY>300</locationY>
+        <name>myRule_9_A1</name>
+        <label>Notify Team</label>
+        <locationX>900</locationX>
+        <locationY>200</locationY>
         <actionName>VehicleDelivered</actionName>
         <actionType>apex</actionType>
         <inputParameters>
@@ -131,36 +162,6 @@
             </value>
         </inputParameters>
     </actionCalls>
-    <actionCalls>
-        <processMetadataValues>
-            <name>apexSelection</name>
-            <value>
-                <stringValue>Vehicle Method</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_9_A1</name>
-        <label>Start monitoring</label>
-        <locationX>900</locationX>
-        <locationY>200</locationY>
-        <actionName>VehicleApex</actionName>
-        <actionType>apex</actionType>
-    </actionCalls>
-    <assignments>
-        <name>myVariable_waitStartTimeAssignment</name>
-        <label>myVariable_waitStartTimeAssignment</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>myDecision</targetReference>
-        </connector>
-    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -343,7 +344,7 @@
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_7</name>
-            <conditionLogic>or</conditionLogic>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -645,7 +646,7 @@
         </rules>
         <rules>
             <name>myRule_7_pmetrule</name>
-            <conditionLogic>or</conditionLogic>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -742,7 +743,7 @@
         </rules>
     </decisions>
     <description>Complete vehicle delivery process.</description>
-    <interviewLabel>Vehicle-2_InterviewLabel</interviewLabel>
+    <interviewLabel>Vehicle-3_InterviewLabel</interviewLabel>
     <label>Vehicle Process</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -794,91 +795,8 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_5_A1</name>
-        <label>Add to SAP</label>
-        <locationX>500</locationX>
-        <locationY>200</locationY>
-        <connector>
-            <targetReference>myRule_5_A2</targetReference>
-        </connector>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>SAP ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue/>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>SAP_ID__c</field>
-            <value>
-                <stringValue>V-00001</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Vehicle__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>always</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[Vehicle__c]</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
         <name>myRule_7_A1</name>
-        <label>Delivery signoff</label>
+        <label>Update Status</label>
         <locationX>700</locationX>
         <locationY>200</locationY>
         <connector>
@@ -930,13 +848,13 @@
             </processMetadataValues>
             <field>Status__c</field>
             <value>
-                <stringValue>Ownership</stringValue>
+                <stringValue>Delivery</stringValue>
             </value>
         </inputAssignments>
         <object>Vehicle__c</object>
     </recordUpdates>
-    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
-    <status>Draft</status>
+    <startElementReference>myDecision</startElementReference>
+    <status>Active</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
@@ -952,15 +870,5 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Vehicle__c</objectType>
-    </variables>
-    <variables>
-        <name>myVariable_waitStartTimeVariable</name>
-        <dataType>DateTime</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <value>
-            <elementReference>$Flow.CurrentDateTime</elementReference>
-        </value>
     </variables>
 </Flow>
