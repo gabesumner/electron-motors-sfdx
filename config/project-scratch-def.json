@@ -15,8 +15,8 @@
             "networksEnabled": true,
             "pathAssistantsEnabled": true,
             "s1DesktopEnabled": true,
-            "s1EncryptedStoragePref2": false,
-            "selfSetPasswordinAPI": true
+            "selfSetPasswordInApi": true,
+            "s1EncryptedStoragePref2": false
         }
     }
 }
