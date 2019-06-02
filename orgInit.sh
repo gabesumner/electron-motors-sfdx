@@ -1,5 +1,5 @@
-#sfdx force:org:create -f config/project-scratch-def.json -d 30 -s -w 60
-sfdx force:org:create -f config/project-scratch-def.json -s -w 60
+# Create the scratch org.
+sfdx shane:org:create -f config/project-scratch-def.json -d 30 -s -n --userprefix admin --userdomain electron.demo
 
 # Analytics doesn't deploy without a permset and that will block the deployment of the permset
 # I removed the problematic files to ~/custom and we'll deploy them after we have the permset set.
@@ -16,4 +16,4 @@ sfdx force:source:deploy --sourcepath ./custom/flexipages/Finance_Home1.flexipag
 sfdx force:apex:execute -f scripts/createDemoRecords.apex
 
 sfdx force:org:open
-sfdx shane:user:password:set -g Admin -l User -p sfdx1234
+sfdx shane:user:password:set -g User -l User -p sfdx1234
