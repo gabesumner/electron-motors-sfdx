@@ -9,8 +9,8 @@ sfdx force:apex:execute -f scripts/assignAnalyticsPermset.apex
 
 # The Permset is now deployed and applied, so we can restore the original .forceignore
 # Now deploy the files we skipped.
-sfdx force:source:deploy --sourcepath ./force-app/main/default/wave
-sfdx force:source:deploy --sourcepath ./force-app/main/default/flexipages/Finance_Home1.flexipage-meta.xml
+sfdx force:source:deploy --sourcepath ./custom/wave
+sfdx force:source:deploy --sourcepath ./custom/flexipages/Finance_Home1.flexipage-meta.xml
 
 # Create the demo accounts
 sfdx force:apex:execute -f scripts/createDemoRecords.apex
