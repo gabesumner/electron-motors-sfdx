@@ -2,7 +2,7 @@
 sfdx force:org:create -f config/project-scratch-def.json -s -w 60
 
 # Analytics doesn't deploy without a permset and that will block the deployment of the permset
-# The .forceignore file will exclude the problematic files.
+# I removed the problematic files to ~/custom and we'll deploy them after we have the permset set.
 sfdx force:source:push
 sfdx force:user:permset:assign -n electron
 sfdx force:apex:execute -f scripts/assignAnalyticsPermset.apex
