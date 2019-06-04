@@ -94,7 +94,7 @@ public with sharing class DemoController {
 
     @AuraEnabled
     public static void CreateReema() {        
-        List<Account> accounts = [SELECT ID FROM Account WHERE Name = 'Reema Kaar'];
+        List<Account> accounts = [SELECT ID FROM Account WHERE Name = 'Reema Karr'];
         for (Account account : accounts) {
             List<Contact> contacts = [SELECT ID From Contact WHERE AccountId = :account.Id];
             List<Vehicle__c> vehicles = [SELECT ID From Vehicle__c WHERE Account__c = :account.Id];
@@ -103,6 +103,7 @@ public with sharing class DemoController {
             delete vehicles;
             delete contacts;
         }
+        delete accounts;
 
         Account account = new Account();
         account.Name = 'Reema Karr';
@@ -129,6 +130,7 @@ public with sharing class DemoController {
             delete vehicles;
             delete contacts;
         }
+        delete accounts;
 
         Account account = new Account();
         account.Name = 'Jake Hagans';
