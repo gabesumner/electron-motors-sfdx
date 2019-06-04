@@ -1,11 +1,12 @@
 ({
-    createAccounts : function(component, NumberofAccounts) {
+    createAccounts : function(component, helper, NumberofAccounts) {
         var action = component.get("c.GenerateAccounts");
         action.setParams({ NumberofAccounts : NumberofAccounts });
         action.setCallback(this, function(response) {
             var state = response.getState();
             if (state === "SUCCESS") {
                 console.log("Created accounts.");
+                helper.showSuccess('Account(s) generated');
             }
             else if (state === "INCOMPLETE") {
                 console.log("INCOMPLETE");
@@ -22,5 +23,14 @@
                 }
         });
         $A.enqueueAction(action);
+    },
+
+    showSuccess : function(message) {
+        var toastEvent = $A.get("e.force:showToast");
+        toastEvent.setParams({
+            message: message,
+            type: 'success'
+        });
+        toastEvent.fire();        
     }
 })
