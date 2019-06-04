@@ -21,7 +21,7 @@ public with sharing class DemoController {
 
     @AuraEnabled
     public static void DeleteAll() {
-        List<Account> accounts = [SELECT Id FROM Account WHERE Name != 'Website Customers'];
+        List<Account> accounts = [SELECT Id FROM Account];
         List<Contact> contacts = [SELECT Id FROM Contact];
         List<Case> cases = [SELECT Id FROM Case];
         List<Opportunity> opportunities = [SELECT Id FROM Opportunity];
@@ -92,7 +92,18 @@ public with sharing class DemoController {
         return loan.Id;        
     }
 
+    @AuraEnabled
     public static void CreateReema() {        
+        List<Account> accounts = [SELECT ID FROM Account WHERE Name = 'Reema Kaar'];
+        for (Account account : accounts) {
+            List<Contact> contacts = [SELECT ID From Contact WHERE AccountId = :account.Id];
+            List<Vehicle__c> vehicles = [SELECT ID From Vehicle__c WHERE Account__c = :account.Id];
+            List<Loan__c> loans = [SELECT ID From Loan__c WHERE Account__c = :account.Id];
+            delete loans;
+            delete vehicles;
+            delete contacts;
+        }
+
         Account account = new Account();
         account.Name = 'Reema Karr';
         account.Type = 'Customer';
@@ -107,7 +118,18 @@ public with sharing class DemoController {
         insert contact;
     }
 
-    public static void CreateJake() {        
+    @AuraEnabled
+    public static void CreateJake() {
+        List<Account> accounts = [SELECT ID FROM Account WHERE Name = 'Jake Hagans'];
+        for (Account account : accounts) {
+            List<Contact> contacts = [SELECT ID From Contact WHERE AccountId = :account.Id];
+            List<Vehicle__c> vehicles = [SELECT ID From Vehicle__c WHERE Account__c = :account.Id];
+            List<Loan__c> loans = [SELECT ID From Loan__c WHERE Account__c = :account.Id];
+            delete loans;
+            delete vehicles;
+            delete contacts;
+        }
+
         Account account = new Account();
         account.Name = 'Jake Hagans';
         account.Type = 'Customer';
@@ -296,12 +318,18 @@ public with sharing class DemoController {
         loan.Downpayment__c = Decimal.ValueOf(randomString(new string[]{'1000', '3000', '5000', '10000', '15000'}));
         loan.Price__c = vehicle.Price__c - loan.Downpayment__c;
         loan.Terms__c = Integer.ValueOf(randomString(new string[]{'12', '24', '36', '48', '60', '72', '84'}));
-        loan.Interest__c = Decimal.ValueOf(String.ValueOf(randomInt(2, 9)) + '.' + String.ValueOf(randomInt(0, 99)));
+        loan.Interest__c = Decimal.ValueOf(String.ValueOf(randomInt(1, 8)) + '.' + String.ValueOf(randomInt(0, 99)));
         loan.Vehicle__c = vehicle.Id;
         loan.FirstName__c = contact.FirstName;
         loan.LastName__c = contact.LastName;
         loan.Employer__c = randomString(new string[]{'Northern Trail Outfitters', 'E-Bikes', 'DreamHouse', 'Pure Aloe', 'DreamInvest', 'Easy Spaces', 'Redwoods Insurance'});
         loan.SSN__c = String.ValueOf('55555' + String.ValueOf(randomInt(1111, 9999)));
+
+        if (vehicle.Status__c == 'Purchase') {
+            loan.Status__c = randomString(new string[]{'Pending', 'Pending', 'Declined'});
+        } else {
+            loan.Status__c = randomString(new string[]{'Approved'});
+        }
         return loan;
     }
 
