@@ -6,7 +6,6 @@
             var state = response.getState();
             if (state === "SUCCESS") {
                 console.log("Created accounts.");
-                helper.showSuccess('Account(s) generated');
             }
             else if (state === "INCOMPLETE") {
                 console.log("INCOMPLETE");
@@ -23,6 +22,7 @@
                 }
         });
         $A.enqueueAction(action);
+        helper.showSuccess('Account(s) generated');
     },
 
     showSuccess : function(message) {
