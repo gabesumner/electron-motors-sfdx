@@ -1,5 +1,5 @@
 ({
-    createAccounts : function(component, NumberofAccounts) {
+    createAccounts : function(component, helper, NumberofAccounts) {
         var action = component.get("c.GenerateAccounts");
         action.setParams({ NumberofAccounts : NumberofAccounts });
         action.setCallback(this, function(response) {
@@ -22,5 +22,15 @@
                 }
         });
         $A.enqueueAction(action);
+        helper.showSuccess('Account(s) generated');
+    },
+
+    showSuccess : function(message) {
+        var toastEvent = $A.get("e.force:showToast");
+        toastEvent.setParams({
+            message: message,
+            type: 'success'
+        });
+        toastEvent.fire();        
     }
 })

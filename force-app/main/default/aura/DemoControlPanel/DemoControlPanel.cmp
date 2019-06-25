@@ -11,8 +11,12 @@
                 <div>
                     <lightning:button label="Generate 1 Account with Activity" iconName="utility:adduser" onclick="{!c.createAccount}" />
                     <lightning:button label="Generate 10 Accounts with Activity" iconName="utility:adduser" onclick="{!c.createAccounts10}" />
-                    <lightning:button label="Generate 100 Accounts with Activity" iconName="utility:adduser" onclick="{!c.createAccounts100}" />
+                    <lightning:button label="Generate 50 Accounts with Activity" iconName="utility:adduser" onclick="{!c.createAccounts50}" />
                 </div>
+                <div class="slds-p-top_small">
+                    <lightning:button label="Create Jake" iconName="utility:adduser" onclick="{!c.createJake}" />
+                    <lightning:button label="Create Reema" iconName="utility:adduser" onclick="{!c.createReema}" />
+                </div>                
             </div>
         </lightning:card>
     </div>
