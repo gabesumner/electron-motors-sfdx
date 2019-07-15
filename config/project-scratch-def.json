@@ -1,22 +1,23 @@
 {
-    "orgName": "Electron Motors",
-    "edition": "Developer",
-    "features": [
-        "Communities",
-        "EinsteinAssistant",
-        "SiteDotCom",
-        "Sites",
-        "WavePlatform",
-        "DevelopmentWave",
-        "EinsteinAnalyticsPlus"
-    ],
-    "settings": {
-        "orgPreferenceSettings": {
-            "networksEnabled": true,
-            "pathAssistantsEnabled": true,
-            "s1DesktopEnabled": true,
-            "selfSetPasswordInApi": true,
-            "s1EncryptedStoragePref2": false
-        }
+  "orgName": "Electron Motors",
+  "edition": "Developer",
+  "features": [
+    "Communities",
+    "EinsteinAssistant",
+    "SiteDotCom",
+    "Sites",
+    "WavePlatform",
+    "DevelopmentWave",
+    "EinsteinAnalyticsPlus",
+    "EinsteinBuilderFree"
+  ],
+  "settings": {
+    "orgPreferenceSettings": {
+      "networksEnabled": true,
+      "pathAssistantsEnabled": true,
+      "s1DesktopEnabled": true,
+      "selfSetPasswordInApi": true,
+      "s1EncryptedStoragePref2": false
     }
+  }
 }
