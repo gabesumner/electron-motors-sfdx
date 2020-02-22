@@ -12,12 +12,22 @@
     "EinsteinBuilderFree"
   ],
   "settings": {
-    "orgPreferenceSettings": {
-      "networksEnabled": true,
-      "pathAssistantsEnabled": true,
-      "s1DesktopEnabled": true,
-      "selfSetPasswordInApi": true,
-      "s1EncryptedStoragePref2": false
+    "communitiesSettings": {
+      "enableNetworksEnabled": true
+    },
+    "pathAssistantSettings": {
+      "pathAssistantEnabled": true
+    },
+    "lightningExperienceSettings": {
+       "enableS1DesktopEnabled": true
+    },
+    "securitySettings": {
+      "passwordPolicies": {
+        "enableSetPasswordInApi": true
+      }
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
     }
   }
 }
