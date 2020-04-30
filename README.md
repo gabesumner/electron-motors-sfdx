@@ -22,9 +22,7 @@ cd electron-motors-sfdx
   ```
   sh orgInit.sh
   ```
-
-  *Note: This project currently requires a pre-release DevHub.*
-
+  
 4. In **Setup**, under **Themes and Branding**, activate the **Electron Motors** theme.
 
 5. Use the **App Launcher** and click **Demo Control Panel**.
