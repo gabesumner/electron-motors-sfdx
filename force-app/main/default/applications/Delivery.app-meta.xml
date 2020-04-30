@@ -7,11 +7,13 @@
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
     <description>Manage the transportation and delivery of customers&#39; vehicles.</description>
+    <formFactors>Small</formFactors>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Delivery</label>
     <navType>Standard</navType>
+    <setupExperience>all</setupExperience>
     <tabs>standard-Feed</tabs>
     <tabs>standard-Contact</tabs>
     <tabs>standard-report</tabs>

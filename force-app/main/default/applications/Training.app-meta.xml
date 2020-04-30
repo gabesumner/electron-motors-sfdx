@@ -7,11 +7,13 @@
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
     <description>Manage customer education about their new vehicle.</description>
+    <formFactors>Small</formFactors>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Training</label>
     <navType>Standard</navType>
+    <setupExperience>all</setupExperience>
     <tabs>standard-Dashboard</tabs>
     <tabs>standard-Contact</tabs>
     <tabs>Vehicle__c</tabs>
