@@ -16,7 +16,6 @@
                 "query": "{\"measures\":[[\"count\",\"*\"]],\"groups\":[\"Status__c\"]}",
                 "version": -1.0
             },
-            "receiveFacet": false,
             "selectMode": "multi",
             "type": "aggregateflex",
             "useGlobal": true,

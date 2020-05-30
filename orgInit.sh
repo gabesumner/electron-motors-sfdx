@@ -1,19 +1,37 @@
-# Create the scratch org.
-sfdx shane:org:create -f config/project-scratch-def.json -d 30 -s -n --userprefix admin --userdomain electron.demo
 
-# Analytics doesn't deploy without a permset and that will block the deployment of the permset
-# I removed the problematic files to ~/custom and we'll deploy them after we have the permset set.
+# Create the scratch org (uncomment for local development)
+sfdx force:org:delete -u electron-motors-sfdx
+sfdx force:org:create -f config/project-scratch-def.json --setalias electron-motors-sfdx --setdefaultusername
+
+# Create the scratch org (uncomment for the SFDX Deployer)
+# sfdx shane:org:create -f config/project-scratch-def.json -d 30 -s -n --userprefix admin --userdomain electron.demo
+
+# Push the metadata into the new scratch org.
 sfdx force:source:push
+
+# Assign the permset to the default admin user.
 sfdx force:user:permset:assign -n electron
-sfdx force:apex:execute -f scripts/assignAnalyticsPermset.apex
 
-# The Permset is now deployed and applied, so we can restore the original .forceignore
-# Now deploy the files we skipped.
-sfdx force:source:deploy --sourcepath ./custom/wave
-sfdx force:source:deploy --sourcepath ./custom/flexipages/Finance_Home1.flexipage-meta.xml
+# Assign a special analytics (non-Modify-All) permset to the Integration User used by Einstein Analytics
+sfdx shane:user:permset:assign -n analytics -g Integration -l User
 
-# Create the demo accounts
-sfdx force:apex:execute -f scripts/createDemoRecords.apex
+# Import the data required by the demo
+sfdx automig:load --inputdir ./data --deletebeforeload
 
-sfdx force:org:open
+# Deploy the metadata for the the dataflow (this needed to happen AFTER the other meta data was pushed and the permset was applied to the Integration user)
+sfdx force:source:deploy -p dataflow
+
+# Start the dataflow for the Analytics.
+sfdx shane:analytics:dataflow:start -n Electron
+
+# Deploy the metadata for the visualizations
+sfdx force:source:deploy -p visualizations
+
+# Activate the custom theme.
+sfdx shane:theme:activate -n Electron
+
+# Set the default password.
 sfdx shane:user:password:set -g User -l User -p sfdx1234
+
+# Open the demo org.
+sfdx force:org:open

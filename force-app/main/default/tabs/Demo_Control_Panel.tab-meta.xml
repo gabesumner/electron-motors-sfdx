@@ -3,6 +3,5 @@
     <description>Created by Lightning App Builder</description>
     <flexiPage>Demo_Control_Panel</flexiPage>
     <label>Demo Control Panel</label>
-    <mobileReady>true</mobileReady>
     <motif>Custom19: Wrench</motif>
 </CustomTab>
