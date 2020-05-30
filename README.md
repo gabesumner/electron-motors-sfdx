@@ -17,16 +17,15 @@ cd electron-motors-sfdx
   sfdx plugins:install shane-sfdx-plugins
   ```
 
-3. Run the startup script
+3. Install **sfdx-migration-automatic** (if you don't already have it)
+
+  ```
+  sfdx plugins:install sfdx-migration-automatic
+  ```
+
+
+4. Run the startup script
 
   ```
   sh orgInit.sh
   ```
-  
-4. In **Setup**, under **Themes and Branding**, activate the **Electron Motors** theme.
-
-5. Use the **App Launcher** and click **Demo Control Panel**.
-
-6. Use the buttons to generate Accounts, Contacts, and Vehicles.
-
-7. Use the **App Launcher**, click **Sales**, then navigate to **Vehicles**.
