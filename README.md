@@ -4,6 +4,10 @@ This is an end-to-end Lightning Platform demo based on a fictitious company call
 
 ## Installation Instructions
 
+Get your own private clone of this demo in a 30-day scratch org by (CLICKING HERE|https://hosted-scratch.herokuapp.com/launch?template=https://github.com/gabesumner/electron-motors-sfdx).
+
+Or manually clone this demo using the instructions below.
+
 1. Clone the repository:
 
 ```
