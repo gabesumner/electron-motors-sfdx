@@ -3,10 +3,9 @@
   "edition": "Developer",
   "features": [
     "Communities",
-    "EinsteinAssistant",
-    "SiteDotCom",
     "Sites",
-    "DevelopmentWave"
+    "DevelopmentWave",
+    "EinsteinBuilderFree"
   ],
   "settings": {
     "communitiesSettings": {

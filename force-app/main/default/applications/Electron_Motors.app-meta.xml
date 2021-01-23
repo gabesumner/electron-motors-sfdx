@@ -13,9 +13,7 @@
     <tabs>Vehicle__c</tabs>
     <tabs>VehicleParts__x</tabs>
     <tabs>Delivery__c</tabs>
-    <tabs>standard-RevenueElement</tabs>
     <tabs>standard-Contact</tabs>
-    <tabs>standard-EinsteinAssistant</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Electron_Motors_UtilityBar</utilityBar>
 </CustomApplication>

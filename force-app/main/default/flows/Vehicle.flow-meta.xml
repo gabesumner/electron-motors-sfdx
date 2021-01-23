@@ -162,6 +162,7 @@ SAP Order: V-00001</stringValue>
             </value>
         </inputParameters>
     </actionCalls>
+    <apiVersion>49.0</apiVersion>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -802,6 +803,7 @@ SAP Order: V-00001</stringValue>
         <connector>
             <targetReference>myRule_7_A2</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <processMetadataValues>
                 <name>implicit</name>

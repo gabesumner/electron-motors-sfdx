@@ -13,6 +13,7 @@
     <clickjackProtectionLevel>SameOriginOnly</clickjackProtectionLevel>
     <contentSniffingProtection>true</contentSniffingProtection>
     <cspUpgradeInsecureRequests>true</cspUpgradeInsecureRequests>
+    <enableAuraRequests>true</enableAuraRequests>
     <fileNotFoundPage>FileNotFound</fileNotFoundPage>
     <genericErrorPage>Exception</genericErrorPage>
     <inMaintenancePage>InMaintenance</inMaintenancePage>
@@ -20,10 +21,10 @@
     <masterLabel>Customers</masterLabel>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <requireHttps>true</requireHttps>
-    <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>test-s1cymi6szdmu@example.com</siteAdmin>
+    <siteAdmin>test-ycnu8exl8hkn@example.com</siteAdmin>
+    <siteGuestRecordDefaultOwner>test-ycnu8exl8hkn@example.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
-    <subdomain>java-momentum-5963-dev-ed-16992a6247c</subdomain>
+    <subdomain>energy-ability-47012-dev-ed-1772cd989ed</subdomain>
     <urlPathPrefix>customers</urlPathPrefix>
 </CustomSite>

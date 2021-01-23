@@ -33,5 +33,12 @@ sfdx shane:theme:activate -n Electron
 # Set the default password.
 sfdx shane:user:password:set -g User -l User -p sfdx1234
 
+# Create records for prediction builder.
+sfdx force:apex:execute -f ./scripts/createPredictionAccounts.apex
+sfdx force:apex:execute -f ./scripts/createPredictionAccounts.apex
+sfdx force:apex:execute -f ./scripts/createPredictionAccounts.apex
+sfdx force:apex:execute -f ./scripts/createPredictionAccounts.apex
+
 # Open the demo org.
 sfdx force:org:open
+

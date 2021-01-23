@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
     <interviewLabel>Decline loan {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Decline loan</label>
     <processType>Flow</processType>
@@ -12,6 +13,7 @@
         <connector>
             <targetReference>Deny_loan</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -33,6 +35,7 @@
         <connector>
             <targetReference>Show_confirmation</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -58,7 +61,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>displayText</name>
-            <fieldText>{!loan.FirstName__c} {!loan.LastName__c}&#39;s loan has now been declined.</fieldText>
+            <fieldText>{!loan.FirstName__c} {!loan.LastName__c}&apos;s loan has now been declined.</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
