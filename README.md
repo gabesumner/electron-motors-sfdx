@@ -1,6 +1,6 @@
 # Electron Motors Salesforce Platform Demo
 
-This is an end-to-end Lightning Platform demo based on a fictitious company called Electron Motors.
+This is an end-to-end Salesforce Platform demo based on a fictitious company called Electron Motors.
 
 ## Installation Instructions
 
