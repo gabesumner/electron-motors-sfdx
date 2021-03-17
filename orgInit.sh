@@ -1,10 +1,14 @@
 
 # Create the scratch org (uncomment for local development)
-# sfdx force:org:delete -u electron-motors-sfdx
-# sfdx force:org:create -f config/project-scratch-def.json --setalias electron-motors-sfdx --setdefaultusername
+sfdx force:org:delete -u electron-motors-sfdx
+sfdx force:org:create -f config/project-scratch-def.json --setalias electron-motors-sfdx --setdefaultusername
 
 # Create the scratch org (uncomment for the SFDX Deployer)
-sfdx shane:org:create -f config/project-scratch-def.json -d 30 -s -n --userprefix admin --userdomain electron.demo
+# sfdx shane:org:create -f config/project-scratch-def.json -d 30 -s -n --userprefix admin --userdomain electron.demo
+
+# Install the Salesforce Mobile connected apps - https://appexchange.salesforce.com/listingDetail?listingId=a0N3000000B4cUuEAJ
+# (It's not possible to create custom mobile notifications or create mobile security policies without this being installed)
+sfdx force:package:install -p 04t3A000001AJf2QAG --wait 20
 
 # Push the metadata into the new scratch org.
 sfdx force:source:push
@@ -16,6 +20,7 @@ sfdx force:user:permset:assign -n electron
 sfdx shane:user:permset:assign -n analytics -g Integration -l User
 
 # Import the data required by the demo
+# (Exported using 'sfdx automig:dump --objects Account,Contact,Vehicle__c,Loan__c --outputdir ./dump')
 sfdx automig:load --inputdir ./data --deletebeforeload
 
 # Deploy the metadata for the the dataflow (this needed to happen AFTER the other meta data was pushed and the permset was applied to the Integration user)
@@ -33,12 +38,5 @@ sfdx shane:theme:activate -n Electron
 # Set the default password.
 sfdx shane:user:password:set -g User -l User -p sfdx1234
 
-# Create records for prediction builder.
-sfdx force:apex:execute -f ./scripts/createPredictionAccounts.apex
-sfdx force:apex:execute -f ./scripts/createPredictionAccounts.apex
-sfdx force:apex:execute -f ./scripts/createPredictionAccounts.apex
-sfdx force:apex:execute -f ./scripts/createPredictionAccounts.apex
-
 # Open the demo org.
 sfdx force:org:open
-

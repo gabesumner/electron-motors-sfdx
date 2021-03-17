@@ -14,11 +14,11 @@
     </brandingSetProperty>
     <brandingSetProperty>
         <propertyName>BRAND_IMAGE</propertyName>
-        <propertyValue>/file-asset/electron_brand21?v=1</propertyValue>
+        <propertyValue>/file-asset/electron_logo?v=1</propertyValue>
     </brandingSetProperty>
     <brandingSetProperty>
         <propertyName>BANNER_IMAGE</propertyName>
-        <propertyValue>/file-asset/ee_theme_page_bg?v=1</propertyValue>
+        <propertyValue>/file-asset/electron_theme?v=1</propertyValue>
     </brandingSetProperty>
     <brandingSetProperty>
         <propertyName>GROUPS_BANNER_IMAGE</propertyName>

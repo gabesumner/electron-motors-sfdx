@@ -4,7 +4,7 @@
     <decisions>
         <name>checkPaymentType</name>
         <label>Check payment type</label>
-        <locationX>410</locationX>
+        <locationX>612</locationX>
         <locationY>206</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
@@ -89,11 +89,17 @@
             <stringValue>LightningFlowBuilder</stringValue>
         </value>
     </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
         <name>createInvoice</name>
         <label>Create invoice</label>
-        <locationX>646</locationX>
+        <locationX>848</locationX>
         <locationY>319</locationY>
         <connector>
             <targetReference>screenCashSuccess</targetReference>
@@ -118,7 +124,7 @@
     <recordCreates>
         <name>createLoan</name>
         <label>Create loan</label>
-        <locationX>60</locationX>
+        <locationX>262</locationX>
         <locationY>470</locationY>
         <assignRecordIdToReference>loanId</assignRecordIdToReference>
         <connector>
@@ -189,7 +195,7 @@
     <recordLookups>
         <name>getVehicle</name>
         <label>Get vehicle</label>
-        <locationX>250</locationX>
+        <locationX>452</locationX>
         <locationY>50</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -220,7 +226,7 @@
     <recordUpdates>
         <name>updateVehicle</name>
         <label>Update vehicle</label>
-        <locationX>60</locationX>
+        <locationX>262</locationX>
         <locationY>630</locationY>
         <connector>
             <targetReference>showLoanSuccess</targetReference>
@@ -268,7 +274,7 @@
     <screens>
         <name>screenCashSuccess</name>
         <label>Show success</label>
-        <locationX>645</locationX>
+        <locationX>848</locationX>
         <locationY>623</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -289,7 +295,7 @@
     <screens>
         <name>showLoanCalculator</name>
         <label>Loan calculator</label>
-        <locationX>247</locationX>
+        <locationX>449</locationX>
         <locationY>318</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -325,6 +331,7 @@
                     <stringValue>60</stringValue>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <outputParameters>
                 <assignToReference>price</assignToReference>
@@ -349,7 +356,7 @@
     <screens>
         <name>showLoanForm</name>
         <label>Loan form</label>
-        <locationX>60</locationX>
+        <locationX>262</locationX>
         <locationY>318</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -409,8 +416,8 @@
     <screens>
         <name>showLoanSuccess</name>
         <label>Show loan success</label>
-        <locationX>258</locationX>
-        <locationY>629</locationY>
+        <locationX>461</locationX>
+        <locationY>630</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -430,7 +437,7 @@
     <screens>
         <name>showPaymentType</name>
         <label>Select payment type</label>
-        <locationX>654</locationX>
+        <locationX>856</locationX>
         <locationY>58</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -460,12 +467,18 @@
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <startElementReference>getVehicle</startElementReference>
+    <start>
+        <locationX>50</locationX>
+        <locationY>31</locationY>
+        <connector>
+            <targetReference>getVehicle</targetReference>
+        </connector>
+    </start>
     <status>Active</status>
     <subflows>
         <name>Get_Price</name>
         <label>Get Price</label>
-        <locationX>417</locationX>
+        <locationX>619</locationX>
         <locationY>50</locationY>
         <connector>
             <targetReference>showPaymentType</targetReference>
