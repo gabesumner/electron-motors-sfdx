@@ -20,7 +20,7 @@ sfdx force:user:permset:assign -n electron
 sfdx shane:user:permset:assign -n analytics -g Integration -l User
 
 # Import the data required by the demo
-# (Exported using 'sfdx automig:dump --objects Account,Contact,Vehicle__c,Loan__c --outputdir ./dump')
+# (Exported using 'sfdx automig:dump --objects Account,Contact,Vehicle__c,Loan__c --outputdir ./data')
 sfdx automig:load --inputdir ./data --deletebeforeload
 
 # Deploy the metadata for the the dataflow (this needed to happen AFTER the other meta data was pushed and the permset was applied to the Integration user)

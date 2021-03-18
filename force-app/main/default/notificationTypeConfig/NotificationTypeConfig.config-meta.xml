@@ -91,13 +91,6 @@
         <notificationType>event_reminder</notificationType>
     </notificationTypeSettings>
     <notificationTypeSettings>
-        <notificationChannels>
-            <desktopEnabled>true</desktopEnabled>
-            <mobileEnabled>true</mobileEnabled>
-        </notificationChannels>
-        <notificationType>feed_on_field_service</notificationType>
-    </notificationTypeSettings>
-    <notificationTypeSettings>
         <appSettings>
             <connectedAppName>sf_chttr_apps__Chatter_for_Android</connectedAppName>
             <enabled>true</enabled>
