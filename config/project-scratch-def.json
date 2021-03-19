@@ -6,6 +6,8 @@
     "Sites",
     "DevelopmentWave",
     "EinsteinBuilderFree",
+    "MobileSecurity", 
+    "SecurityEventEnabled",
     "enableSetPasswordInApi"
   ],
   "settings": {

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>DeviceIdentifier__c</columns>
+    <columns>DeviceModel__c</columns>
+    <columns>EnforcedAction__c</columns>
+    <columns>OsName__c</columns>
+    <columns>OsVersion__c</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>UserId__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

@@ -13,6 +13,9 @@ sfdx force:package:install -p 04t3A000001AJf2QAG --wait 20
 # Push the metadata into the new scratch org.
 sfdx force:source:push
 
+# Apply the custom attributes to the connected app for "Salesforce for iOS"
+sfdx shane:connectedapp:attributes -n "Salesforce for iOS" -a mobileAttributes.json
+
 # Assign the permset to the default admin user.
 sfdx force:user:permset:assign -n electron
 

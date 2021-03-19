@@ -1,0 +1,19 @@
+{
+    "mobile.security.DEVICE_BLACKLIST": {"value": ["iPhone11,8"], "severity": "warn"},
+    "mobile.security.JAILBROKEN_DEVICE": {"value": "false", "severity":"critical"},
+    "mobile.security.MAN_IN_MIDDLE": {"value": "false", "severity":"error"},
+    "mobile.security.BLOCK_3D_TOUCH": {"value": "false", "severity":"info"},
+    "mobile.security.BLOCK_CAMERA": {"value": "false", "severity":"info"},
+    "mobile.security.ANTI_DEBUG": {"value": "false", "severity":"info"},
+    "mobile.security.BLOCK_FILE_BACKUP": {"value": "false", "severity":"info"},
+    "mobile.security.BLOCK_MICROPHONE": {"value": "false", "severity":"info"},
+    "mobile.security.DEVICE_PASSCODE": {"value": "true", "severity":"error"},
+    "mobile.security.MINIMUM_APP_VERSION": {"value": "1.0", "severity":"warn"},
+    "mobile.security.MINIMUM_OS_VERSION": { "value": "80.3", "severity": "info" },
+    "mobile.security.LOG_EMAIL": {"value": "true", "severity":"info"},
+    "mobile.security.LOG_POLICY_RESULT": {"value": "true", "severity":"info"},
+    "mobile.security.LOG_SCREENSHOT": {"value": "true","severity":"info"},
+    "mobile.security.LOG_PHONECALL": {"value": "true", "severity":"info"},
+    "mobile.security.LOG_TEXTMESSAGE": {"value": "true", "severity":"info"},
+    "DISABLE_EXTERNAL_PASTE": true
+  }  
