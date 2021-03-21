@@ -11,6 +11,7 @@
             <objects>
                 <object>Vehicle__c</object>
             </objects>
+            <property name="cardWrapper" type="Boolean" default="false" label="Add Card Styling"/>
             <supportedFormFactors>
                 <supportedFormFactor type="Large" />
                 <supportedFormFactor type="Small" />

@@ -1,48 +1,52 @@
 <template>
-    <div class="slds-grid slds-p-bottom_xx-small">
-        <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
-            <button data-value="Flint" class={getFlintButtonClass} onclick={handleModelClick}>Flint</button>
-        </div>
-        <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
-            <button data-value="Flare" class={getFlareButtonClass} onclick={handleModelClick}>Flare</button>
-        </div>
-        <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
-            <button data-value="Flash" class={getFlashButtonClass} onclick={handleModelClick}>Flash</button>
-        </div>
-    </div>
-    <div>
-        <img src={getModelPhotoUrl} style={getModelStyle} />
-    </div>
-    <div class="colors slds-grid">
-        <div class="slds-col slds-size_1-of-6">
-            <div data-value="0" class={getRedButtonClass} onclick={handleColorClick}></div>
-        </div>
-        <div class="slds-col slds-size_1-of-6">
-            <div data-value="230" class={getBlueButtonClass} onclick={handleColorClick}></div>
-        </div>
-        <div class="slds-col slds-size_1-of-6">
-            <div data-value="130" class={getGreenButtonClass} onclick={handleColorClick}></div>
-        </div>
-        <div class="slds-col slds-size_1-of-6">
-            <div data-value="1000" class={getPurpleButtonClass} onclick={handleColorClick}></div>
-        </div>
-        <div class="slds-col slds-size_1-of-6">
-            <div data-value="4150" class={getTealButtonClass} onclick={handleColorClick}></div>
-        </div>
-        <div class="slds-col slds-size_1-of-6">
-            <div data-value="55" class={getBrownButtonClass} onclick={handleColorClick}></div>
-        </div>
-    </div>
+    <div class={getWrapperClass}>
+        <div class={getInnerWrapperClass}>
+            <div class="slds-grid slds-p-bottom_xx-small">
+                <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+                    <button data-value="Flint" class={getFlintButtonClass} onclick={handleModelClick}>Flint</button>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+                    <button data-value="Flare" class={getFlareButtonClass} onclick={handleModelClick}>Flare</button>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+                    <button data-value="Flash" class={getFlashButtonClass} onclick={handleModelClick}>Flash</button>
+                </div>
+            </div>
+            <div>
+                <img src={getModelPhotoUrl} style={getModelStyle} />
+            </div>
+            <div class="colors slds-grid">
+                <div class="slds-col slds-size_1-of-6">
+                    <div data-value="0" class={getRedButtonClass} onclick={handleColorClick}></div>
+                </div>
+                <div class="slds-col slds-size_1-of-6">
+                    <div data-value="230" class={getBlueButtonClass} onclick={handleColorClick}></div>
+                </div>
+                <div class="slds-col slds-size_1-of-6">
+                    <div data-value="130" class={getGreenButtonClass} onclick={handleColorClick}></div>
+                </div>
+                <div class="slds-col slds-size_1-of-6">
+                    <div data-value="1000" class={getPurpleButtonClass} onclick={handleColorClick}></div>
+                </div>
+                <div class="slds-col slds-size_1-of-6">
+                    <div data-value="4150" class={getTealButtonClass} onclick={handleColorClick}></div>
+                </div>
+                <div class="slds-col slds-size_1-of-6">
+                    <div data-value="55" class={getBrownButtonClass} onclick={handleColorClick}></div>
+                </div>
+            </div>
 
-    <div class="slds-grid">
-        <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
-            <button data-value="75 kWh" class={get75BatteryButtonClass} onclick={handleBatteryClick}>75 kWh</button>
-        </div>
-        <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
-            <button data-value="100 kWh" class={get100BatteryButtonClass} onclick={handleBatteryClick}>100 kWh</button>
-        </div>
-        <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
-            <button data-value="100P kWh" class={get100PBatteryButtonClass} onclick={handleBatteryClick}>100P kWh</button>
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+                    <button data-value="75 kWh" class={get75BatteryButtonClass} onclick={handleBatteryClick}>75 kWh</button>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+                    <button data-value="100 kWh" class={get100BatteryButtonClass} onclick={handleBatteryClick}>100 kWh</button>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+                    <button data-value="100P kWh" class={get100PBatteryButtonClass} onclick={handleBatteryClick}>100P kWh</button>
+                </div>
+            </div>
         </div>
     </div>
 </template>

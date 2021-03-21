@@ -9,7 +9,7 @@
     <filters>
         <field>Status__c</field>
         <operation>equals</operation>
-        <value>Purchase</value>
+        <value>Manufacturing</value>
     </filters>
     <filters>
         <field>Prediction_Sample__c</field>

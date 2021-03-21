@@ -12,6 +12,9 @@ const fields = [
 
 export default class CarConfigurator extends LightningElement {
     model; color; battery;
+    @api cardWrapper = false;
+
+    // Retrieve the current Vehicle record using the LWC wire service.
     @api recordId;
     @wire(getRecord, { recordId: '$recordId', fields }) 
     getVehicle({error, data}) {
@@ -22,6 +25,14 @@ export default class CarConfigurator extends LightningElement {
             this.color = data.fields.Paint__c.value
             this.battery = data.fields.Battery__c.value
         }
+    }
+
+    get getWrapperClass() {
+        return (this.cardWrapper ? "slds-card" : "")
+    }
+
+    get getInnerWrapperClass() {
+        return (this.cardWrapper ? "slds-card__body slds-card__body_inner" : "")
     }
 
     get getFlintButtonClass() {

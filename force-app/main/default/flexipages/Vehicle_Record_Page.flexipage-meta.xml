@@ -586,10 +586,14 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>cardWrapper</name>
+                    <value>true</value>
+                </componentInstanceProperties>
                 <componentName>carConfigurator</componentName>
             </componentInstance>
         </itemInstances>
-        <name>Facet-e0e2a5ed-6011-4b93-afb8-6a785bfc806f</name>
+        <name>Facet-d77b69d4-1cc5-471f-975a-972a6f95647d</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -597,7 +601,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-e0e2a5ed-6011-4b93-afb8-6a785bfc806f</value>
+                    <value>Facet-d77b69d4-1cc5-471f-975a-972a6f95647d</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
@@ -606,7 +610,7 @@
                 <componentName>flexipage:tab</componentName>
             </componentInstance>
         </itemInstances>
-        <name>Facet-8d521256-f27c-4105-ad71-46bbe3d2b4a9</name>
+        <name>Facet-df09bdfa-b6cc-44a5-aa33-0324629020a5</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -627,7 +631,7 @@
                 <componentName>flowruntime:interview</componentName>
             </componentInstance>
         </itemInstances>
-        <name>Facet-804ab9ca-d184-4f05-a80e-c7789cc44e5b</name>
+        <name>Facet-ffc6ad0c-e5f6-4487-ac5a-8fd356cee473</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -639,7 +643,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-804ab9ca-d184-4f05-a80e-c7789cc44e5b</value>
+                    <value>Facet-ffc6ad0c-e5f6-4487-ac5a-8fd356cee473</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
@@ -648,7 +652,7 @@
                 <componentName>flexipage:tab</componentName>
             </componentInstance>
         </itemInstances>
-        <name>Facet-90270a67-041d-4fd4-b89f-8b908825c81f</name>
+        <name>Facet-778f9068-d1e3-4f89-9e46-bfb3af4c3e4d</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -688,7 +692,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
-                    <value>Facet-8d521256-f27c-4105-ad71-46bbe3d2b4a9</value>
+                    <value>Facet-df09bdfa-b6cc-44a5-aa33-0324629020a5</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
             </componentInstance>
@@ -697,7 +701,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
-                    <value>Facet-90270a67-041d-4fd4-b89f-8b908825c81f</value>
+                    <value>Facet-778f9068-d1e3-4f89-9e46-bfb3af4c3e4d</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
             </componentInstance>
