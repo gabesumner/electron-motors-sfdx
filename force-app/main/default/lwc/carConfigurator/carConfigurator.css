@@ -1,0 +1,48 @@
+.slds-button {
+    width: 100%;
+    padding: 0 !important;
+}
+
+img {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 0;
+}
+
+.selected {
+    -moz-box-shadow: inset 0 0 0 3px #000000;
+    -webkit-box-shadow: inset 0 0 0 3px #000000;
+    box-shadow: inset 0 0 0 3px #000000;   
+}
+
+.red {
+    background-color: #ff0000;
+}
+.blue {
+    background-color: #0000ff;
+}
+.green {
+    background-color: #00aa00;
+}
+.purple {
+    background-color: #8a2be2;
+}
+.teal {
+    background-color: #00b3b3;
+}
+.brown {
+    background-color: #e0d3a7;
+}
+
+.colors {
+    padding-bottom: 1rem;
+    padding: 0 1rem 1rem 1rem;
+}
+.color {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgb(204, 204, 204);
+    margin: 0 auto;
+    border-radius: 50%;
+}

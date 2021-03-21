@@ -5,7 +5,6 @@
     <columns>Owner__c</columns>
     <columns>Model__c</columns>
     <columns>Status__c</columns>
-    <columns>LAST_UPDATE</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Status__c</field>
