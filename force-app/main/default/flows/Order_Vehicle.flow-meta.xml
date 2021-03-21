@@ -102,7 +102,7 @@
         <locationX>848</locationX>
         <locationY>319</locationY>
         <connector>
-            <targetReference>screenCashSuccess</targetReference>
+            <targetReference>updateVehicleForCash</targetReference>
         </connector>
         <inputAssignments>
             <field>Customer__c</field>
@@ -255,6 +255,42 @@
             <field>Payment_Type__c</field>
             <value>
                 <elementReference>paymentTypes</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Price__c</field>
+            <value>
+                <elementReference>numberPrice</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Purchase</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Vehicle__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>updateVehicleForCash</name>
+        <label>Update Vehicle</label>
+        <locationX>848</locationX>
+        <locationY>477</locationY>
+        <connector>
+            <targetReference>screenCashSuccess</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Payment_Type__c</field>
+            <value>
+                <stringValue>Cash</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
