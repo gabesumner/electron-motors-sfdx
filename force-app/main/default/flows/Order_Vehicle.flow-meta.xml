@@ -4,8 +4,8 @@
     <decisions>
         <name>checkPaymentType</name>
         <label>Check payment type</label>
-        <locationX>612</locationX>
-        <locationY>206</locationY>
+        <locationX>314</locationX>
+        <locationY>638</locationY>
         <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
         <rules>
             <name>isCash</name>
@@ -36,6 +36,31 @@
                 <targetReference>showLoanCalculator</targetReference>
             </connector>
             <label>Loan</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>checkStatus</name>
+        <label>Check Vehicle Status</label>
+        <locationX>578</locationX>
+        <locationY>278</locationY>
+        <defaultConnector>
+            <targetReference>screenExistingPurchase</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>isPurchase</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vehicle.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Purchase</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Price</targetReference>
+            </connector>
+            <label>Status is Purchase</label>
         </rules>
     </decisions>
     <dynamicChoiceSets>
@@ -92,15 +117,15 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
         <name>createInvoice</name>
         <label>Create invoice</label>
-        <locationX>848</locationX>
-        <locationY>319</locationY>
+        <locationX>50</locationX>
+        <locationY>758</locationY>
         <connector>
             <targetReference>updateVehicleForCash</targetReference>
         </connector>
@@ -124,8 +149,8 @@
     <recordCreates>
         <name>createLoan</name>
         <label>Create loan</label>
-        <locationX>262</locationX>
-        <locationY>470</locationY>
+        <locationX>314</locationX>
+        <locationY>998</locationY>
         <assignRecordIdToReference>loanId</assignRecordIdToReference>
         <connector>
             <targetReference>updateVehicle</targetReference>
@@ -195,11 +220,11 @@
     <recordLookups>
         <name>getVehicle</name>
         <label>Get vehicle</label>
-        <locationX>452</locationX>
-        <locationY>50</locationY>
+        <locationX>578</locationX>
+        <locationY>158</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Price</targetReference>
+            <targetReference>checkStatus</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -222,12 +247,16 @@
             <assignToReference>vehicle.Price__c</assignToReference>
             <field>Price__c</field>
         </outputAssignments>
+        <outputAssignments>
+            <assignToReference>vehicle.Status__c</assignToReference>
+            <field>Status__c</field>
+        </outputAssignments>
     </recordLookups>
     <recordUpdates>
         <name>updateVehicle</name>
         <label>Update vehicle</label>
-        <locationX>262</locationX>
-        <locationY>630</locationY>
+        <locationX>314</locationX>
+        <locationY>1118</locationY>
         <connector>
             <targetReference>showLoanSuccess</targetReference>
         </connector>
@@ -274,8 +303,8 @@
     <recordUpdates>
         <name>updateVehicleForCash</name>
         <label>Update Vehicle</label>
-        <locationX>848</locationX>
-        <locationY>477</locationY>
+        <locationX>50</locationX>
+        <locationY>878</locationY>
         <connector>
             <targetReference>screenCashSuccess</targetReference>
         </connector>
@@ -309,9 +338,9 @@
     </recordUpdates>
     <screens>
         <name>screenCashSuccess</name>
-        <label>Show success</label>
-        <locationX>848</locationX>
-        <locationY>623</locationY>
+        <label>Show cash success</label>
+        <locationX>50</locationX>
+        <locationY>998</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -329,10 +358,26 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>screenExistingPurchase</name>
+        <label>Existing Purchase</label>
+        <locationX>842</locationX>
+        <locationY>398</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>textExistingPurchase</name>
+            <fieldText>&lt;p&gt;This vehicle has already been purchased.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>showLoanCalculator</name>
         <label>Loan calculator</label>
-        <locationX>449</locationX>
-        <locationY>318</locationY>
+        <locationX>314</locationX>
+        <locationY>758</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -392,8 +437,8 @@
     <screens>
         <name>showLoanForm</name>
         <label>Loan form</label>
-        <locationX>262</locationX>
-        <locationY>318</locationY>
+        <locationX>314</locationX>
+        <locationY>878</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -452,8 +497,8 @@
     <screens>
         <name>showLoanSuccess</name>
         <label>Show loan success</label>
-        <locationX>461</locationX>
-        <locationY>630</locationY>
+        <locationX>314</locationX>
+        <locationY>1238</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -473,8 +518,8 @@
     <screens>
         <name>showPaymentType</name>
         <label>Select payment type</label>
-        <locationX>856</locationX>
-        <locationY>58</locationY>
+        <locationX>314</locationX>
+        <locationY>518</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -504,8 +549,8 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
-        <locationY>31</locationY>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>getVehicle</targetReference>
         </connector>
@@ -514,8 +559,8 @@
     <subflows>
         <name>Get_Price</name>
         <label>Get Price</label>
-        <locationX>619</locationX>
-        <locationY>50</locationY>
+        <locationX>314</locationX>
+        <locationY>398</locationY>
         <connector>
             <targetReference>showPaymentType</targetReference>
         </connector>
